@@ -1,0 +1,35 @@
+COMANDOS LARAVEL
+
+php artisan create-project --prefer-dist laravel/laravel Laradex
+php artisan app:name LaraDex
+php artisan serve --port 8080
+php artisan make:controller TrainerController --resource
+
+// MODELOS
+model en singular, y tu entidad en plural
+
+// CREAR MODELO Y MIGRACION
+php artisan make:model Trainer --migration
+
+// EJECUTAR MIGRACIONES
+php artisan migrate
+
+// ERROR EMOJIS Y TAMAÑO DE STRING CAMBIAR EN EL DIRECTORIO
+APP->PROVIDERS->APPSERVICEPROVIDES.PHP
+EN EL METODO BOOT AGREGAR LA SIGUIENTE LINEA DE CODIGO
+
+use Illuminate\Support\Facades\Schema;
+
+Schema::defaultStringLength(191);
+
+// AGREGAR MIGRACION PARA AGREGAR CAMPO AVATAR
+
+php artisan make:migration add_avatar_to_trainer_table --table=trainers
+php artisan make:migration add_slug_to_trainers --table=trainers
+
+
+
+// cursos express js
+https://mega.nz/#!8VUFmYxC!qT70dEbb0yiKZ7RpZfP5GLI27XaIXg83Pg2PH0_YX0U
+https://mega.nz/#!lQ9wHKKC!q850AEXB7-AYCveuUaJ2sfGWI4NpGqcFi8sZYE6Le-0
+https://mega.nz/#!kQU3QCwb!tHsQlWgSdBJlLAJVkmORqkNWQjkGJw79szQGBpvFgp8
