@@ -6,7 +6,7 @@ php artisan serve --port 8080
 php artisan make:controller TrainerController --resource
 
 // MODELOS
-model en singular, y tu entidad en plural
+model en singular, y tu entidad en plural base de datos
 
 // CREAR MODELO Y MIGRACION
 php artisan make:model Trainer --migration

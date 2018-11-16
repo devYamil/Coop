@@ -1,30 +1,3 @@
-/* --------------------------
-:: Template Name: Colorlib App - App Landing Page 
-:: Template Author: Colorlib
-:: Template Author URI: https://colorlib.com/
-:: Description: Colorlib is a One Page based App Landing Template. It's very clean, creative & beautiful. It's super     responsive & ultra light.
-:: Tags: Colorlib, App Landing, Apps, Responsive App Landing, Bootstrap 4, Free Theme, Free HTML Template, HTML5 Template etc.
-:: Version: v1.0
-:: Created: 11/03/2017
--------------------------- */
-
-/* --- [Master Stylesheet] ----
-:: 1.0 Base CSS Start
-:: 2.0 Header Area CSS
-:: 3.0 Wellcome Area CSS
-:: 4.0 Special Area CSS
-:: 5.0 Features Area CSS
-:: 6.0 Video Area CSS
-:: 7.0 Cool Facts Area CSS
-:: 8.0 Screenshots Area CSS
-:: 9.0 Pricing Plan Area CSS
-:: 10.0 Testimonials Area CSS
-:: 11.0 CTA Area CSS Start
-:: 12.0 Team Area CSS Start
-:: 13.0 Contact Area CSS Start
-:: 14.0 Footer Area CSS Start
--------------------------- */
-
 @import url('https://fonts.googleapis.com/css?family=Cabin:400,500,700|Montserrat:400,500,700');
 @import 'css/bootstrap.min.css';
 @import 'css/animate.css';
@@ -38,7 +11,10 @@
 /* --------------------------
 :: 1.0 Base CSS Start
 -------------------------- */
-
+/*OVERRIDE*/
+#ca-navbar{
+    background-color: #00695c !important;
+}
 * {
     margin: 0;
     padding: 0;
@@ -199,7 +175,7 @@ ol {
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #fb397d;
+    background-color: #00796b;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -233,7 +209,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #5b32b4;
+    color: #00695c;
     font-size: 48px;
     margin: 0;
 }
@@ -247,7 +223,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #fb397d;
+    background-color: #00796b;
     margin-top: 15px;
 }
 
@@ -285,7 +261,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #fb397d;
+    border-color: #dddddd #dddddd #00796b;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -367,7 +343,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #fb397d;
+    color: #00796b;
 }
 
 .sing-up-button {
@@ -378,7 +354,7 @@ p {
     color: #fff;
     font-weight: 500;
     display: inline-block;
-    border: 2px solid #a883e9;
+    border: 2px solid #00897b;
     height: 50px;
     min-width: 178px;
     line-height: 46px;
@@ -387,7 +363,7 @@ p {
 }
 
 .sing-up-button > a:hover {
-    background: #fb397d;
+    background: #00796b;
     color: #fff;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
@@ -398,7 +374,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #884bdf;
+    background-color: #00695c;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -424,7 +400,7 @@ p {
 -------------------------- */
 
 .wellcome_area {
-    background-image: url(img/bg-img/welcome-bg.png);
+    background-image: url(img/bg-img/welcome-bg.jpg);
     height: 900px;
     position: relative;
     z-index: 1;
@@ -465,7 +441,8 @@ p {
 }
 
 .get-start-area .email {
-    background: #9572e8;
+    background: #26a69a;
+    color: #FFFFFF;
     height: 50px;
     max-width: 260px;
     border: none;
@@ -500,7 +477,7 @@ p {
 }
 
 .get-start-area .submit {
-    background-color: #fb397d;
+    background-color: #00796b;
     color: #fff;
     font-weight: 500;
     display: inline-block;
@@ -514,7 +491,8 @@ p {
 }
 
 .get-start-area .submit:hover {
-    background: #6f52e5;
+    cursor: pointer;
+    background: #00897b;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -547,12 +525,12 @@ p {
 
 .single-icon > i {
     font-size: 36px;
-    color: #fb397d;
+    color: #00796b;
 }
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #00695c;
 }
 
 .single-icon {
@@ -561,7 +539,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #00695c;
     margin-bottom: 15px;
 }
 
@@ -576,7 +554,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #5b32b4;
+    color: #00695c;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -622,7 +600,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #fb397d;
+    background-color: #00796b;
 }
 
 .app-download-btn a i {
@@ -671,7 +649,7 @@ p {
 }
 
 .single-feature > i {
-    color: #fb397d;
+    color: #00796b;
     font-size: 30px;
     display: inline-block;
     float: left;
@@ -680,7 +658,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #00695c;
 }
 
 .single-feature > p {
@@ -719,7 +697,7 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #fb397d;
+    background-color: #00796b;
     color: #fff;
     text-align: center;
     display: block;
@@ -829,7 +807,7 @@ p {
 }
 
 .app-screenshots-area .owl-dot.active {
-    background-color: #fb397d;
+    background-color: #00796b;
     border: transparent;
 }
 
@@ -860,13 +838,13 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #5b32b4;
+    color: #00695c;
     font-size: 18px;
 }
 
 
 .single-price-plan .package-plan .ca-price h4 {
-    color: #fb397d;
+    color: #00796b;
     font-size: 48px;
     position: relative;
     z-index: 1;
@@ -876,7 +854,7 @@ p {
 
 .single-price-plan .package-plan .ca-price span {
     font-size: 18px;
-    color: #fb397d;
+    color: #00796b;
 }
 
 .single-price-plan .plan-button > a {
@@ -921,7 +899,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
+    color: #00695c;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -972,8 +950,8 @@ p {
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #fb397d;
-    border-color: #fb397d;
+    background-color: #00796b;
+    border-color: #00796b;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -1059,13 +1037,13 @@ p {
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #fb397d;
+    color: #00796b;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
 
 .get-started-button > a:hover {
-    background: #5b32b4;
+    background: #00695c;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1093,7 +1071,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #00695c;
 }
 
 .member-text > p {
@@ -1170,7 +1148,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #5b32b4;
+    color: #00695c;
 }
 
 .footer-contact-area .line-shape {
@@ -1202,7 +1180,7 @@ p {
 }
 
 .btn.submit-btn {
-    background: #fb397d;
+    background: #00796b;
     height: 48px;
     min-width: 185px;
     color: #ffffff;
@@ -1211,7 +1189,7 @@ p {
 }
 
 .btn.submit-btn:hover {
-    background: #5b32b4;
+    background: #00695c;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1231,13 +1209,13 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #5b32b4;
+    color: #00695c;
     font-size: 72px;
     font-weight: 700;
 }
 
 .footer-social-icon > a > i {
-    background: #9b69e4;
+    background: #26a69a;
     font-size: 14px;
     color: #ffffff;
     height: 40px;
@@ -1249,7 +1227,7 @@ p {
 }
 
 .footer-social-icon > a > i:hover {
-    background: #fb397d;
+    background: #00796b;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1276,7 +1254,7 @@ p {
 }
 
 .footer-social-icon > a .active {
-    background: #fb397d;
+    background: #00796b;
 }
 
 .footer-menu ul li:last-child a {
