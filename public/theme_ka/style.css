@@ -11,9 +11,26 @@
 /* --------------------------
 :: 1.0 Base CSS Start
 -------------------------- */
+/* MODAL REGISTRAR USUARIO */
+.modal-header-registrar-usuario{
+    background-color: #00695c;
+}
+.modal-title-registrar-usuario{
+    color: #e0f2f1;
+}
 /*OVERRIDE*/
-#ca-navbar{
-    background-color: #00695c !important;
+#ui-list-cooperativas{
+    background-color: #00897b;
+}
+.li-cooperativas{
+    padding-left: 10px;
+    color: #FFF;
+}
+@media (max-width: 767px) and (min-width: 320px)
+{
+    #ca-navbar {
+        background-color: #00695c !important;
+    }
 }
 * {
     margin: 0;
@@ -1174,7 +1191,16 @@ p {
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;
 }
-
+#password {
+    font-size: 18px;
+    padding: 15px 15px;
+    border-radius: 25px 25px 25px 0;
+}
+#repeat_password {
+    font-size: 18px;
+    padding: 15px 15px;
+    border-radius: 25px 25px 25px 0;
+}
 #message {
     border-radius: 25px 25px 25px 0;
 }

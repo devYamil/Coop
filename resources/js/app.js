@@ -4,8 +4,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
-require('./bootstrap');
+// SOLUCIONADO ERROR LARAVEL SI TIENS YA DECLARADO JQUERY
+//require('./bootstrap');
 
 window.Vue = require('vue');
 
@@ -18,7 +18,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
+Vue.component('post-component', require('./components/post/postComponent.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {

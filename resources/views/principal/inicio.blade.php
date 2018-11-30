@@ -16,6 +16,15 @@
                         <div class="collapse navbar-collapse" id="ca-navbar">
                             <ul class="navbar-nav ml-auto" id="nav">
                                 <li class="nav-item active"><a class="nav-link" href="#inicio">Inicio</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Cooperativas <span class="caret"></span></a>
+                                    <!-- LISTADO DE COOPERATIVAS -->
+                                    <ul id="ui-list-cooperativas" class="dropdown-menu">
+                                        @foreach($cooperativas as $cooperativa)
+                                            <li><a class="li-cooperativas" href="/cooperativas/1">{{$cooperativa->nombre}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 <li class="nav-item"><a class="nav-link" href="#acerca_de">Acerca de</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#screenshot">Screenshot</a></li>
@@ -24,7 +33,7 @@
                                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                             </ul>
                             <div class="sing-up-button d-lg-none">
-                                <a href="#">Registrate Aquí</a>
+                                <a href="#" data-toggle="modal" data-target="#registrar-usuario">Registrate Aquí</a>
                             </div>
                         </div>
                     </nav>
@@ -33,7 +42,7 @@
             <!-- Signup btn -->
             <div class="col-12 col-lg-2">
                 <div class="sing-up-button d-none d-lg-block">
-                    <a href="#">Registrate Aquí</a>
+                    <a href="#" data-toggle="modal" data-target="#registrar-usuario">Registrate Aquí</a>
                 </div>
             </div>
         </div>

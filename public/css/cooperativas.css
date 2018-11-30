@@ -1,0 +1,23 @@
+.card-custom-avatar,
+.card-custom-title{
+    display: inline-block;
+}
+.card-custom-title{
+    position: relative;
+    top: 10px;
+}
+.card-title-user{
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    color: #000;
+    margin: 0px !important;
+}
+
+.card-title-date{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin: 0px !important;
+}
+.card-custom-text{
+    text-align: justify;
+}

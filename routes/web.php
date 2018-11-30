@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('principal.inicio');
-});
+Route::resource('/', 'InicioController');
+Route::resource('/cooperativa', 'CooperativaController');
+

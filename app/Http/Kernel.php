@@ -60,6 +60,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'cors' => \Coop\Http\Middleware\Cors::class,
+        'jwt-auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class
     ];
 
     /**

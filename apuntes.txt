@@ -27,9 +27,43 @@ Schema::defaultStringLength(191);
 php artisan make:migration add_avatar_to_trainer_table --table=trainers
 php artisan make:migration add_slug_to_trainers --table=trainers
 
+// AGREGAR MIGRACION SEEDER
+php artisan make:seeder CooperativaTableSeeder
 
+// EJECUTAR DB:SEED
+php artisan db:seed --class=CooperativaTableSeeder
 
-// cursos express js
-https://mega.nz/#!8VUFmYxC!qT70dEbb0yiKZ7RpZfP5GLI27XaIXg83Pg2PH0_YX0U
-https://mega.nz/#!lQ9wHKKC!q850AEXB7-AYCveuUaJ2sfGWI4NpGqcFi8sZYE6Le-0
-https://mega.nz/#!kQU3QCwb!tHsQlWgSdBJlLAJVkmORqkNWQjkGJw79szQGBpvFgp8
+// EJECUTAR CORS CON ARTISAN
+php artisan make:middleware Cors
+
+// TYMON JWT
+"tymon/jwt-auth": "0.5.*"   require
+ejecutar composer update
+// TYMON ADD SERVICE PROVIDER AND ALIAS
+Agregar el service provider en
+config/app.php
+** PROVIDERS
+Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
+** ALIAS
+'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+** PUBLICAR EN LARAVEL JWTAuthServiceProvider
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\JWTAuthServiceProvider"
+** GENERAR JWT SECRET CON EL SIGUIENTE COMANDO
+php artisan jwt:generate
+** ERROR HANGLE
+Tymon\JWTAuth\Commands\JWTGenerateCommand:
+``
+
+public function handle()
+{
+$this->fire();
+}
+** CONFIGURAR TTL TIEMPO DE VIDA DE UN TOKEN
+** USAR LA CLASE GETUSERFROMTOKEN.PHP tymon/middleware
+dar un token y convertir un array con todos los datos
+en http\kernel.php
+$routeMiddleware
+'jwt-auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class
+** CREAR AUTENTICACION CONTROLLER
+php artisan make:controlle AutenticacionController

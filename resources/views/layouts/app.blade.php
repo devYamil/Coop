@@ -5,6 +5,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Title -->
     <title>@yield('title')</title>
@@ -14,13 +15,16 @@
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{ URL::asset('theme_ka/css/responsive.css') }}" rel="stylesheet">
+
 </head>
 <body>
 <!-- Preloader Start -->
 <div id="preloader">
     <div class="colorlib-load"></div>
 </div>
-@yield('content-app')
+<div id="app">
+    @yield('content-app')
+</div>
 <!-- ***** Footer Area Start ***** -->
 <footer class="footer-social-icon text-center section_padding_70 clearfix">
     <!-- footer logo -->
@@ -52,6 +56,66 @@
 </footer>
 <!-- ***** Footer Area Start ***** -->
 
+<!-- The Modal -->
+<div class="modal fade" id="registrar-usuario">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header modal-header-registrar-usuario">
+                <h4 class="modal-title modal-title-registrar-usuario">REGISTRAR USUARIO</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <!-- Form Start-->
+                    <div class="contact_from">
+                        <form action="#" method="post">
+                            <!-- Message Input Area Start -->
+                            <div class="contact_input_area">
+                                <div class="row">
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" name="name" id="nameasdf" placeholder="Escribe tú nombre" required="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="email" id="emailasdf" placeholder="Escribe tú correo electrónico" required="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="passwordasdf" id="password" placeholder="Escribe tú password" required="">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" name="repeat_password" id="repeat_password" placeholder="Repite tú password" required="">
+                                        </div>
+                                    </div>
+                                    <!-- Single Input Area Start -->
+                                    <div class="col-12">
+                                        <button type="submit" class="btn submit-btn">Registrarse</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Message Input Area End -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ elixir('js/app.js') }}"></script>  <!-- ADD VUE JS -->
 <!-- Jquery-2.2.4 JS -->
 <script src="{{ URL::asset('theme_ka/js/jquery-2.2.4.min.js') }}"></script>
 <!-- Popper js -->
@@ -66,6 +130,9 @@
 <script src="{{ URL::asset('theme_ka/js/footer-reveal.min.js') }}"></script>
 <!-- Active JS -->
 <script src="{{ URL::asset('theme_ka/js/active.js') }}"></script>
+
+
+
 </body>
 
 </html>
