@@ -1,8 +1,8 @@
 <template>
-    <section class="wellcome_area clearfix" id="inicio">
-        <div class="container h-100">
+    <section style="padding-top: 200px;" class="wellcome_area clearfix" id="inicio">
+        <div class="container h-100" >
             <div class="row h-100 align-items-center">
-                <div class="card" style="width: 100% !important;">
+                <div class="card" style="width: 100% !important; margin-top: 10px;" v-for="post in posts">
                     <div class="card-body">
                         <div class="card-header border-0">
                             <div class="card-custom-avatar">
@@ -28,6 +28,42 @@
 
 <script>
     export default {
+        data(){
+            return {
+                posts: [
+                    {
+                        id: 1,
+                        id_user: 2,
+                        text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                        resource: "IMAGEN.PHP"
+                    },
+                    {
+                        id: 2,
+                        id_user: 2,
+                        text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                        resource: "IMAGEN.PHP"
+                    },
+                    {
+                        id: 3,
+                        id_user: 2,
+                        text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                        resource: "IMAGEN.PHP"
+                    },
+                    {
+                        id: 4,
+                        id_user: 2,
+                        text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                        resource: "IMAGEN.PHP"
+                    },
+                    {
+                        id: 5,
+                        id_user: 2,
+                        text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                        resource: "IMAGEN.PHP"
+                    },
+                ]
+            }
+        },
         mounted() {
             console.log('Component mounted  LIST POST.')
         }

@@ -1180,23 +1180,27 @@ p {
     margin-bottom: 50px;
 }
 
-#name {
+#name,
+#modal_name{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;
 }
 
-#email {
+#email,
+#modal_email{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;
 }
-#password {
+#password,
+#modal_password{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;
 }
-#repeat_password {
+#repeat_password,
+#modal_repeat_password{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;

@@ -631,5 +631,6 @@
     </div>
 </section>
 <!-- ***** Contact Us Area End ***** -->
-
+<!-- The Modal REGISTRAR USUARIO-->
+<registrar-usuario-component></registrar-usuario-component>
 @endsection

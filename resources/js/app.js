@@ -8,6 +8,7 @@
 //require('./bootstrap');
 
 window.Vue = require('vue');
+window.axios = require('axios');
 
 /**
  * The following block of code may be used to automatically register your
@@ -19,6 +20,7 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('post-component', require('./components/post/postComponent.vue'));
+Vue.component('registrar-usuario-component', require('./components/user/RegistrarUsuarioComponent.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
