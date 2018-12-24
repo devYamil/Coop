@@ -3,6 +3,7 @@
 namespace Coop\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Coop\Post;
 
 class PostController extends Controller
 {
@@ -11,9 +12,26 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function storageFile(Request $request)
     {
-        //
+        $file = $request->file('file');
+        $file_name = time() . $file->getClientOriginalName();
+        $file_path = 'uploads/';
+        $file->move($file_path, $file_name);
+
+        response()->json('ok', 200);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        if($request->json()){
+            $posts = Post::all();
+            return response()->json($posts, 200);
+        }
     }
 
     /**
@@ -34,7 +52,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->json()){
+            $id_user = 2;
+            $text = $request->input('text');
+            $resource = 'none';
+            $status = 1;
+            $post = Post::create([
+                'id_user' => $id_user,
+                'text' => $text,
+                'resource' => $resource,
+                'status' => $status,
+            ]);
+            return response()->json(['post'=>$post], 201);
+        }
     }
 
     /**

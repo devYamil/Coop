@@ -21,15 +21,26 @@ class AutenticacionController extends Controller
     }
     public function registrar(Request $request){
         if($request->json()){
-            $usuario = User::create([
-                'name' => $request->input('name'),
-                'email' => $request->input('email'),
-                'password' => bcrypt($request->input('password'))
-            ]);
-            $token = JWTAuth::fromUser($usuario);
-            return response()->json(['token'=>$token], 201);
+            $name = $request->input('name');
+            $email = $request->input('email');
+            $password = bcrypt($request->input('password'));
+            $user = User::where('email', '=', $email)->first();
+            if ($user === null) {
+                $usuario = User::create([
+                    'name' => $name,
+                    'email' => $email,
+                    'password' => $password
+                ]);
+                $token = JWTAuth::fromUser($usuario);
+                return response()->json(['token'=>$token], 201);
+            }else{
+                return response()->json(['error'=>'You user already in use', 'code' => 1000], 400);
+            }
         }else{
-            return response()->json(['error'=>'Your request isnt ajax'], 400);
+            return response()->json(['error'=>'Your request not is json', 'code'=> 1001], 400);
         }
+    }
+    public function getUserData(){
+        //code
     }
 }

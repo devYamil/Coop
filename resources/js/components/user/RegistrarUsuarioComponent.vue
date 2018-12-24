@@ -2,10 +2,10 @@
     <div class="modal fade" id="registrar-usuario">
         <div class="modal-dialog">
             <div class="modal-content">
-                <pre v-html="User"></pre>
+                <!--<pre v-html="User"></pre> -->
                 <!-- Modal Header -->
                 <div class="modal-header modal-header-registrar-usuario">
-                    <h4 class="modal-title modal-title-registrar-usuario">REGISTRAR USUARIO</h4>
+                    <h4 class="modal-title modal-title-registrar-usuario">Registrar Usuario</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
@@ -50,10 +50,11 @@
                             </form>
                         </div>
                     </div>
+                    <spinner-component v-show="spinner"></spinner-component>
                 </div>
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
+                    <button type="button" ref="closeMRU" class="btn btn-danger" data-dismiss="modal">CANCELAR</button>
                 </div>
             </div>
         </div>
@@ -69,20 +70,50 @@
                   email: "",
                   password: "",
                   repeat_password: ""
-              }
+              },
+              spinner: false
           }
         },
         methods:{
             registrarUsuario: function () {
-                console.log(this.User);
-                axios.post('http://127.0.0.1:4500/api/registrar/', {
+                this.resetForm();
+                this.spinner = true;
+                const config = {};
+                const bodyParameter = {
                     name: this.User.name,
                     email: this.User.email,
                     password: this.User.password
-                })
-                .then(function (res) {
-                    console.log('Result POST:' , res);
+                };
+
+                axios
+                .post('http://127.0.0.1:4500/api/registrar/', bodyParameter, config)
+                .then( (res) => {
+                    console.log('RESPONSE: ', res);
+                    const token = res.data.token;
+                    localStorage.setItem('_tkn', token);
+                    this.spinner = false;
+                    this.$toasted
+                        .success('Usted acaba de registrarse correctamente!!')
+                        .goAway(4000);
+                    const elemModalRegisterUser = this.$refs.closeMRU;
+                    elemModalRegisterUser.click();
+                }).catch(error => {
+                    const code = error.response.data.code;
+                    if(code == 1000){
+                        this.spinner = false;
+                        this.$toasted
+                            .error('El usuario esta en uso!!')
+                            .goAway(4000);
+                    }else{
+                        this.spinner = false;
+                        this.$toasted
+                            .error('Ocurrio un error al registrarse!!')
+                            .goAway(4000);
+                    }
                 });
+            },
+            resetForm: function () {
+                console.log('llamando metodo');
             }
         },
         mounted() {

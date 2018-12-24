@@ -19,6 +19,98 @@
     color: #e0f2f1;
 }
 /*OVERRIDE*/
+.float-user-button{
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    top: 120px;
+    right: 10px;
+    text-shadow: 2px 2px #000000;
+}
+.username-init{
+    font-family: 'Montserrat', sans-serif;
+    color: #e0f2f1;
+}
+#modal_name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+    opacity: 1; /* Firefox */
+}
+#modal_email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+     color: #00695c;
+     opacity: 1; /* Firefox */
+}
+#modal_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+    opacity: 1; /* Firefox */
+}
+#modal_repeat_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+    opacity: 1; /* Firefox */
+}
+#modal_is_email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+    opacity: 1; /* Firefox */
+}
+#modal_is_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+    opacity: 1; /* Firefox */
+}
+
+#modal_name:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_repeat_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_is_email:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_is_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+
+#modal_name:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_email:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_password:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_repeat_password:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_is_email:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+#modal_is_password:-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Montserrat', sans-serif;
+    color: #00695c;
+}
+
 #ui-list-cooperativas{
     background-color: #00897b;
 }
@@ -1188,13 +1280,15 @@ p {
 }
 
 #email,
-#modal_email{
+#modal_email,
+#modal_is_email{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;
 }
 #password,
-#modal_password{
+#modal_password,
+#modal_is_password{
     font-size: 18px;
     padding: 15px 15px;
     border-radius: 25px 25px 25px 0;

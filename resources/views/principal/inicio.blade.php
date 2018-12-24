@@ -4,6 +4,10 @@
 <!-- ***** Header Area Start ***** -->
 <header class="header_area animated">
     <div class="container-fluid">
+        <div class="sing-up-button float-user-button">
+            <a href="#" data-toggle="modal" data-target="#registrar-usuario">Registrate</a>
+            <a href="#" data-toggle="modal" data-target="#iniciar-sesion">Iniciar sesion</a>
+        </div>
         <div class="row align-items-center">
             <!-- Menu Area Start -->
             <div class="col-12 col-lg-10">
@@ -21,7 +25,7 @@
                                     <!-- LISTADO DE COOPERATIVAS -->
                                     <ul id="ui-list-cooperativas" class="dropdown-menu">
                                         @foreach($cooperativas as $cooperativa)
-                                            <li><a class="li-cooperativas" href="/cooperativas/1">{{$cooperativa->nombre}}</a></li>
+                                            <li><a class="li-cooperativas" href="/cooperativa/1">{{$cooperativa->nombre}}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
@@ -32,8 +36,8 @@
                                 <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                             </ul>
-                            <div class="sing-up-button d-lg-none">
-                                <a href="#" data-toggle="modal" data-target="#registrar-usuario">Registrate Aquí</a>
+                            <div class="d-lg-none username-init">
+                                Yamil Alejo
                             </div>
                         </div>
                     </nav>
@@ -41,8 +45,8 @@
             </div>
             <!-- Signup btn -->
             <div class="col-12 col-lg-2">
-                <div class="sing-up-button d-none d-lg-block">
-                    <a href="#" data-toggle="modal" data-target="#registrar-usuario">Registrate Aquí</a>
+                <div class="d-none d-lg-block username-init">
+                    Yamil Alejo
                 </div>
             </div>
         </div>
@@ -633,4 +637,5 @@
 <!-- ***** Contact Us Area End ***** -->
 <!-- The Modal REGISTRAR USUARIO-->
 <registrar-usuario-component></registrar-usuario-component>
+<iniciar-sesion-component></iniciar-sesion-component>
 @endsection

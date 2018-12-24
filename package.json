@@ -19,5 +19,10 @@
         "node-sass": "^4.10.0",
         "popper.js": "^1.12",
         "vue": "^2.5.17"
+    },
+    "dependencies": {
+        "vue-toasted": "^1.1.26",
+        "vue2-dropzone": "^3.5.2",
+        "vue2-form-validate": "^1.1.0"
     }
 }
