@@ -15,7 +15,7 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Coop\Http\Middleware\CheckForMaintenanceMode::class,
-        \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+        //\Illuminate\Foundation\Http\Middleware\ValidatePostSize::class, COMENTAR ESTA CLASE PORQUE VALIDA EL TAMAÑO DE ARCHIVOS
         \Coop\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Coop\Http\Middleware\TrustProxies::class,
