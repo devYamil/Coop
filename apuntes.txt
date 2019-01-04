@@ -30,7 +30,7 @@ php artisan make:migration add_slug_to_trainers --table=trainers
 // AGREGAR MIGRACION SEEDER
 php artisan make:seeder CooperativaTableSeeder
 
-// EJECUTAR DB:SEED
+// EJECUTAR DB:SEED  LLENAR TABLA COOPERATIVAS
 php artisan db:seed --class=CooperativaTableSeeder
 
 // EJECUTAR CORS CON ARTISAN

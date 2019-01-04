@@ -20,4 +20,7 @@
 }
 .card-custom-text{
     text-align: justify;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-family: 'Montserrat', sans-serif;
 }

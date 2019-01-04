@@ -13,11 +13,11 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
-            $table->string('text');
-            $table->longText('resource');
+            $table->string('text')->default(NULL)->nullable();
+            $table->longText('resource')->default(NULL)->nullable();
             $table->integer('status'); // SI PUBLICO, SI ESTA PENDIENTE, SI ESTA ELIMINADO
             $table->timestamps();
             $table->foreign('id_user')->references('id')->on('users');

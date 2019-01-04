@@ -15,7 +15,8 @@
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{ URL::asset('theme_ka/css/responsive.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{ URL::asset('gallery-card/baguetteBox.min.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('gallery-card/compact-gallery.css') }}">
 </head>
 <body>
 <!-- Preloader Start -->
@@ -72,7 +73,10 @@
 <!-- Active JS -->
 <script src="{{ URL::asset('theme_ka/js/active.js') }}"></script>
 
-
+<script src="{{ URL::asset('gallery-card/baguetteBox.min.js') }}"></script>
+<script>
+    baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+</script>
 
 </body>
 

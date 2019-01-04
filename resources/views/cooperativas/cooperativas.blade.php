@@ -54,4 +54,5 @@
     <!-- ***** Wellcome Area Start ***** -->
     <post-component></post-component>
     <!-- ***** Wellcome Area End ***** -->
+
 @endsection

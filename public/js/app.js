@@ -13919,6 +13919,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -13933,16 +13947,11 @@ var config = {
         return {
             requireTextPost: false,
             showDropzone: true,
-            posts: [{
-                id: 1,
-                id_user: 2,
-                text: "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-                resource: "IMAGEN.PHP"
-            }],
+            posts: [],
             Post: {
                 id_user: 2,
                 text: '',
-                resource: '',
+                resource: [],
                 status: 2
             },
             dropzoneOptions: {
@@ -13951,7 +13960,7 @@ var config = {
                 acceptedFiles: "video/*,image/*",
                 timeout: null,
                 thumbnailWidth: 150,
-                maxFilesize: 10,
+                maxFilesize: 40,
                 addRemoveLinks: true,
                 autoProcessQueue: false,
                 paramName: 'file',
@@ -13966,7 +13975,9 @@ var config = {
             var text = this.Post.text;
             if (text.length > 0) {
                 text = text.trim();
-                if (text.length > 0) {
+                if (text.length > 0 && this.countFile > 0) {
+                    this.$refs.myVueDropzone.processQueue();
+                } else if (text.length > 0) {
                     this.storePost();
                 } else {
                     if (this.countFile > 0) {
@@ -13994,50 +14005,34 @@ var config = {
             };
 
             axios.post('http://127.0.0.1:4500/api/post/', bodyParameter, config).then(function (res) {
-                console.log('RESPONSE: ', res);
-                _this.posts.unshift(res.data.post);
+                var response = res.data.post;
+                _this.posts.unshift({
+                    id: 1,
+                    id_user: 1,
+                    text: response.text,
+                    resource: JSON.parse(response.resource)
+                });
                 _this.spinner = false;
                 _this.$toasted.success('Publicacion creada correctamente!!').goAway(4000);
             }).catch(function (error) {
                 _this.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
             });
         },
-        resetForm: function resetForm() {
-            console.log('llamando metodo');
-        },
+        resetForm: function resetForm() {},
         // EVENTS DROPZONE
-        dropzoneSuccess: function dropzoneSuccess(args) {
-            var argsResponse = args[1];
-            var url = argsResponse.url;
-            var media_id = argsResponse.media_id;
-            var tags = argsResponse.tags;
-            var type = argsResponse.type;
-            var width = argsResponse.width;
-            var height = argsResponse.height;
-            var bytes = argsResponse.bytes;
-            var uploaded = argsResponse.uploaded;
-            this.Post.resource.push({
-                url: url,
-                media_id: media_id,
-                type: type,
-                tags: tags,
-                bytes: bytes,
-                uploaded: uploaded,
-                width: width,
-                height: height
-            });
-            //console.log('DROPZONE EVENT SUCCESS::::', file);
-        },
+        dropzoneSuccess: function dropzoneSuccess(file) {},
         dropzoneComplete: function dropzoneComplete(file) {
-            console.log(file);
-            console.log('DROPZONE EVENT COMPLETE', file);
+            var responsetext = JSON.parse(file.xhr.responseText);
+            this.Post.resource.push({
+                name: responsetext.file.name,
+                new_name: responsetext.file.new_name,
+                extension: responsetext.file.extension
+            });
         },
-        dropzoneQueueComplete: function dropzoneQueueComplete() {
+        dropzoneQueueComplete: function dropzoneQueueComplete(file) {
             this.storePost();
-            console.log('DROPZONE EVENT QUEUE COMPLET ALL ---->>>>>>>>>>>>>>>>>>');
         },
         dropzoneFileAdded: function dropzoneFileAdded() {
-            console.log('DROPZONE EVENT FILE ADDED *****************');
             this.countFile++;
         },
         dropzoneRemovedFile: function dropzoneRemovedFile() {
@@ -14048,11 +14043,22 @@ var config = {
         var _this2 = this;
 
         axios.get('http://127.0.0.1:4500/api/post/', config).then(function (res) {
-            _this2.posts = res.data;
+            console.log('RESULTADO MOUNTED : ', res);
+            var response = res.data;
+            for (var mypost in response) {
+                _this2.posts.unshift({
+                    id: 1,
+                    id_user: 1,
+                    text: response[mypost].text,
+                    resource: JSON.parse(response[mypost].resource)
+                });
+            }
         }).catch(function (error) {
+            console.log('EERRROR: ', error);
             _this2.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
         });
         console.log('Component mounted  LIST POST.', this.$hostname);
+        baguetteBox.run('.compact-gallery', { animation: 'slideIn' });
     }
 });
 
@@ -14549,13 +14555,15 @@ var render = function() {
               "div",
               {
                 staticClass: "card",
-                staticStyle: { width: "100% !important", "margin-top": "10px" }
+                staticStyle: {
+                  width: "100% !important",
+                  "margin-top": "10px",
+                  "z-index": "9"
+                }
               },
               [
                 _c("div", { staticClass: "card-body" }, [
                   _c("pre", { domProps: { innerHTML: _vm._s(_vm.countFile) } }),
-                  _vm._v(" "),
-                  _c("pre", { domProps: { innerHTML: _vm._s(_vm.Post) } }),
                   _vm._v(" "),
                   _c("div", { staticClass: "card-header border-0" }, [
                     _vm._m(0),
@@ -14670,7 +14678,8 @@ var render = function() {
                   staticClass: "card",
                   staticStyle: {
                     width: "100% !important",
-                    "margin-top": "10px"
+                    "margin-top": "10px",
+                    "z-index": "9"
                   }
                 },
                 [
@@ -14685,11 +14694,83 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "a",
-                      { staticClass: "btn btn-primary", attrs: { href: "#" } },
-                      [_vm._v("Button")]
-                    )
+                    post.resource.length > 0
+                      ? _c(
+                          "section",
+                          { staticClass: "gallery-block compact-gallery" },
+                          [
+                            _c("div", { staticClass: "container" }, [
+                              _c(
+                                "div",
+                                { staticClass: "row no-gutters" },
+                                _vm._l(post.resource, function(myresource) {
+                                  return _c(
+                                    "div",
+                                    {
+                                      staticClass:
+                                        "col-md-6 col-lg-4 item zoom-on-hover"
+                                    },
+                                    [
+                                      _c(
+                                        "a",
+                                        {
+                                          staticClass: "lightbox",
+                                          attrs: {
+                                            href:
+                                              "/uploads/" + myresource.new_name
+                                          }
+                                        },
+                                        [
+                                          _c("img", {
+                                            staticClass: "img-fluid image",
+                                            attrs: {
+                                              src:
+                                                "/uploads/" +
+                                                myresource.new_name
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            { staticClass: "description" },
+                                            [
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "description-heading"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    _vm._s(myresource.new_name)
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "span",
+                                                {
+                                                  staticClass:
+                                                    "description-body"
+                                                },
+                                                [
+                                                  _vm._v(
+                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                                  )
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                })
+                              )
+                            ])
+                          ]
+                        )
+                      : _vm._e()
                   ])
                 ]
               )
@@ -14735,7 +14816,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("div", { staticClass: "card-custom-title" }, [
         _c("p", { staticClass: "card-title card-title-user" }, [
-          _vm._v("aYamil Alejo Perez  TESTING")
+          _vm._v("Yamil Alejo Perez")
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "card-title card-title-date" }, [

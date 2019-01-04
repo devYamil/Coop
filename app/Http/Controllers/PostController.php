@@ -15,11 +15,18 @@ class PostController extends Controller
     public function storageFile(Request $request)
     {
         $file = $request->file('file');
-        $file_name = time() . $file->getClientOriginalName();
-        $file_path = 'uploads/';
-        $file->move($file_path, $file_name);
+        $file_new_name = time() . $file->getClientOriginalName();
+        $file_name = $file->getClientOriginalName();
+        $file_extencion = $file->getClientOriginalExtension();
 
-        response()->json('ok', 200);
+        $file_path = 'uploads/';
+        $file->move($file_path, $file_new_name);
+
+        return response()->json(['file'=>
+                                ['name' => $file_name,
+                                 'new_name' => $file_new_name,
+                                 'extension' => $file_extencion,
+                                 'url' => $file_path]], 200);
     }
     /**
      * Display a listing of the resource.
@@ -53,14 +60,14 @@ class PostController extends Controller
     public function store(Request $request)
     {
         if($request->json()){
-            $id_user = 2;
+            $id_user = 1;
             $text = $request->input('text');
-            $resource = 'none';
+            $resource = $request->input('resource');
             $status = 1;
             $post = Post::create([
                 'id_user' => $id_user,
                 'text' => $text,
-                'resource' => $resource,
+                'resource' => json_encode($resource),
                 'status' => $status,
             ]);
             return response()->json(['post'=>$post], 201);
