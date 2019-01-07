@@ -13933,6 +13933,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -14711,58 +14718,101 @@ var render = function() {
                                         "col-md-6 col-lg-4 item zoom-on-hover"
                                     },
                                     [
-                                      _c(
-                                        "a",
-                                        {
-                                          staticClass: "lightbox",
-                                          attrs: {
-                                            href:
-                                              "/uploads/" + myresource.new_name
-                                          }
-                                        },
-                                        [
-                                          _c("img", {
-                                            staticClass: "img-fluid image",
-                                            attrs: {
-                                              src:
-                                                "/uploads/" +
-                                                myresource.new_name
-                                            }
-                                          }),
-                                          _vm._v(" "),
-                                          _c(
-                                            "span",
-                                            { staticClass: "description" },
+                                      myresource.extension == "jpg"
+                                        ? _c(
+                                            "div",
+                                            { staticClass: "image-content" },
                                             [
                                               _c(
-                                                "span",
+                                                "a",
                                                 {
-                                                  staticClass:
-                                                    "description-heading"
+                                                  staticClass: "lightbox",
+                                                  attrs: {
+                                                    href:
+                                                      "/uploads/" +
+                                                      myresource.new_name
+                                                  }
                                                 },
                                                 [
-                                                  _vm._v(
-                                                    _vm._s(myresource.new_name)
-                                                  )
-                                                ]
-                                              ),
-                                              _vm._v(" "),
-                                              _c(
-                                                "span",
-                                                {
-                                                  staticClass:
-                                                    "description-body"
-                                                },
-                                                [
-                                                  _vm._v(
-                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                                  _c("img", {
+                                                    staticClass:
+                                                      "img-fluid image",
+                                                    attrs: {
+                                                      src:
+                                                        "/uploads/" +
+                                                        myresource.new_name
+                                                    }
+                                                  }),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      staticClass: "description"
+                                                    },
+                                                    [
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "description-heading"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            _vm._s(
+                                                              myresource.new_name
+                                                            )
+                                                          )
+                                                        ]
+                                                      ),
+                                                      _vm._v(" "),
+                                                      _c(
+                                                        "span",
+                                                        {
+                                                          staticClass:
+                                                            "description-body"
+                                                        },
+                                                        [
+                                                          _vm._v(
+                                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                                          )
+                                                        ]
+                                                      )
+                                                    ]
                                                   )
                                                 ]
                                               )
                                             ]
                                           )
-                                        ]
-                                      )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      myresource.extension == "mp4"
+                                        ? _c(
+                                            "div",
+                                            { staticClass: "video-content" },
+                                            [
+                                              _c(
+                                                "video",
+                                                {
+                                                  attrs: {
+                                                    width: "320",
+                                                    height: "240",
+                                                    controls: ""
+                                                  }
+                                                },
+                                                [
+                                                  _c("source", {
+                                                    attrs: {
+                                                      src:
+                                                        "/uploads/" +
+                                                        myresource.new_name,
+                                                      type: "video/mp4"
+                                                    }
+                                                  })
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        : _vm._e()
                                     ]
                                   )
                                 })

@@ -76,7 +76,7 @@
     </div>
     <!-- Welcome thumb -->
     <div class="welcome-thumb wow fadeInDown" data-wow-delay="0.5s">
-        <img src="{{ URL::asset('theme_ka/img/bg-img/welcome-img.png') }}" alt="">
+        <img src="{{ URL::asset('theme_ka/img/bg-img/welcome-bg-hardcoded.png') }}" alt="">
     </div>
 </section>
 <!-- ***** Wellcome Area End ***** -->
@@ -102,7 +102,14 @@
                         <i class="ti-mobile" aria-hidden="true"></i>
                     </div>
                     <h4>MISIÓN</h4>
-                    <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                    <p style="text-align: justify;">
+                        Promueve la asociatividad en las cooperativas a nivel local, regional y
+                        departamental, para el fortalecimiento de la gestion comunitaria del agua
+                        potable y el saneamiento como un derecho humano en todo el territorio
+                        de Bolivia, a fin de impulsar acciones orientadas al desarrollo e
+                        implementación de políticas y estrategias sostenibles de gestión del agua
+                        potable y el saneamiento, en beneficio de las cooperativas y los asociados.
+                    </p>
                 </div>
             </div>
             <!-- Single Special Area -->
@@ -112,7 +119,12 @@
                         <i class="ti-ruler-pencil" aria-hidden="true"></i>
                     </div>
                     <h4>VISIÓN</h4>
-                    <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                    <p style="text-align: justify;">
+                        Es una organización con presencia nacional e incidencia internacional,
+                        que promueve la asociatividad, potencia y coordina esfuerzos y aspiraciones
+                        de las Cooperativas a nivel local, regional y Departamentales de Servicios de Agua
+                        Potable y Saneamiento, en beneficio de las cooperativas y los asociados.
+                    </p>
                 </div>
             </div>
             <!-- Single Special Area -->
@@ -122,7 +134,11 @@
                         <i class="ti-settings" aria-hidden="true"></i>
                     </div>
                     <h4>VALORES</h4>
-                    <p>We build pretty complex tools and this allows us to take designs and turn them into functional quickly and easily</p>
+                    <p style="text-align: justify;">
+                        Latin words, combined with a handful of model sentence structures,
+                        to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
+                        from repetition, injected humour, or non-characteristic words etc.
+                    </p>
                 </div>
             </div>
         </div>
@@ -140,7 +156,7 @@
                     <div class="special_description_content">
                         <h2>Nuestras mejores propuestas son para ti!</h2>
                         <p>METER AQUI LOS TRABAJOS QUE SE REALIZARON ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                        <div class="app-download-area">
+                        Yamil       <div class="app-download-area">
                             <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
                                 <!-- Google Store Btn -->
                                 <a href="#">
@@ -171,58 +187,58 @@
             <div class="col-12">
                 <!-- Heading Text -->
                 <div class="section-heading text-center">
-                    <h2>Awesome Features</h2>
+                    <h2>Características impresionantes</h2>
                     <div class="line-shape"></div>
                 </div>
             </div>
         </div>
 
         <div class="row">
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start Awesome Experience -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-user" aria-hidden="true"></i>
-                    <h5>Awesome Experience</h5>
+                    <h5>Experiencia impresionante</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start Fast and Simple -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-pulse" aria-hidden="true"></i>
-                    <h5>Fast and Simple</h5>
+                    <h5>Rápido y Simple</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start Clean Code-->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-dashboard" aria-hidden="true"></i>
-                    <h5>Clean Code</h5>
+                    <h5>Trabajo limpio</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start Perfect Design -->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-palette" aria-hidden="true"></i>
-                    <h5>Perfect Design</h5>
+                    <h5>Trabajo Honesto</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start Best Industry Leader-->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-crown" aria-hidden="true"></i>
-                    <h5>Best Industry Leader</h5>
+                    <h5>Personal de calidad</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
-            <!-- Single Feature Start -->
+            <!-- Single Feature Start 24/7 Online Support-->
             <div class="col-12 col-sm-6 col-lg-4">
                 <div class="single-feature">
                     <i class="ti-headphone" aria-hidden="true"></i>
-                    <h5>24/7 Online Support</h5>
+                    <h5>Informacion</h5>
                     <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div>
             </div>
@@ -230,7 +246,7 @@
 
     </div>
 </section>
-<!-- ***** Awesome Features End ***** -->
+<!-- ***** Características impresionantes End ***** -->
 
 <!-- ***** Video Area Start ***** -->
 <div class="video-section">
@@ -257,11 +273,11 @@
             <div class="col-12 col-md-3 col-lg-3">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                     <div class="counter-area">
-                        <h3><span class="counter">90</span></h3>
+                        <h3>+<span class="counter">90</span></h3>
                     </div>
                     <div class="cool-facts-content">
                         <i class="ion-arrow-down-a"></i>
-                        <p>APP <br> DOWNLOADS</p>
+                        <p>Usuarios <br> Conectados</p>
                     </div>
                 </div>
             </div>
@@ -269,11 +285,11 @@
             <div class="col-12 col-md-3 col-lg-3">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
                     <div class="counter-area">
-                        <h3><span class="counter">120</span></h3>
+                        <h3>+<span class="counter">700</span></h3>
                     </div>
                     <div class="cool-facts-content">
                         <i class="ion-happy-outline"></i>
-                        <p>Happy <br> Clients</p>
+                        <p>Clientes <br> Felices</p>
                     </div>
                 </div>
             </div>
@@ -281,11 +297,11 @@
             <div class="col-12 col-md-3 col-lg-3">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
                     <div class="counter-area">
-                        <h3><span class="counter">40</span></h3>
+                        <h3>+<span class="counter">30</span></h3>
                     </div>
                     <div class="cool-facts-content">
                         <i class="ion-person"></i>
-                        <p>ACTIVE <br>ACCOUNTS</p>
+                        <p>Cuentas <br>Activas</p>
                     </div>
                 </div>
             </div>
@@ -297,7 +313,7 @@
                     </div>
                     <div class="cool-facts-content">
                         <i class="ion-ios-star-outline"></i>
-                        <p>TOTAL <br>APP RATES</p>
+                        <p>Total <br>Puntuacion</p>
                     </div>
                 </div>
             </div>
@@ -313,7 +329,7 @@
             <div class="col-12 text-center">
                 <!-- Heading Text  -->
                 <div class="section-heading">
-                    <h2>App Screenshots</h2>
+                    <h2>Te mostramos un poco de nuestro trabajo!!</h2>
                     <div class="line-shape"></div>
                 </div>
             </div>
@@ -325,22 +341,22 @@
                 <!-- App Screenshots Slides  -->
                 <div class="app_screenshots_slides owl-carousel">
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-1.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_1.jpg') }}" alt="">
                     </div>
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-2.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_2.jpg') }}" alt="">
                     </div>
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-3.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_3.jpg') }}" alt="">
                     </div>
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-4.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_4.jpg') }}" alt="">
                     </div>
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-5.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_5.jpg') }}" alt="">
                     </div>
                     <div class="single-shot">
-                        <img src="{{ URL::asset('theme_ka/img/scr-img/app-3.jpg') }}" alt="">
+                        <img src="{{ URL::asset('theme_ka/img/scr-img/hard_coded_6.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -563,7 +579,7 @@
                         </div>
                     </div>
                     <div class="member-text">
-                        <h4>Roger West</h4>
+                        <h4>Yamil West</h4>
                         <p>Financer</p>
                     </div>
                 </div>

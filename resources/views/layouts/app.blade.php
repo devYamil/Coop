@@ -10,7 +10,7 @@
     <!-- Title -->
     <title>@yield('title')</title>
     <!-- Favicon -->
-    <link rel="icon" href="{{ URL::asset('theme_ka/img/core-img/favicon.ico') }}">
+    <link rel="icon" href="{{ URL::asset('theme_ka/img/core-img/harcodedicon.png') }}">
     <!-- Core Stylesheet -->
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->

@@ -54,13 +54,20 @@
                             <div class="container">
                                 <div class="row no-gutters">
                                     <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in post.resource">
-                                        <a class="lightbox" :href="'/uploads/' + myresource.new_name">
-                                            <img class="img-fluid image" :src="'/uploads/' + myresource.new_name">
-                                            <span class="description">
+                                        <div class="image-content"  v-if="myresource.extension == 'jpg'">
+                                            <a class="lightbox" :href="'/uploads/' + myresource.new_name">
+                                                <img class="img-fluid image" :src="'/uploads/' + myresource.new_name">
+                                                <span class="description">
                                                 <span class="description-heading">{{myresource.new_name}}</span>
                                                 <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                                             </span>
-                                        </a>
+                                            </a>
+                                        </div>
+                                        <div class="video-content" v-if="myresource.extension == 'mp4'">
+                                            <video width="320" height="240" controls>
+                                                <source :src="'/uploads/' + myresource.new_name" type="video/mp4">
+                                            </video>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

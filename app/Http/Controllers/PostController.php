@@ -3,6 +3,7 @@
 namespace Coop\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use Request;
 use Coop\Post;
 
 class PostController extends Controller
@@ -14,19 +15,27 @@ class PostController extends Controller
      */
     public function storageFile(Request $request)
     {
-        $file = $request->file('file');
-        $file_new_name = time() . $file->getClientOriginalName();
-        $file_name = $file->getClientOriginalName();
-        $file_extencion = $file->getClientOriginalExtension();
+        if($request->hasFile('file'))
+        {
+            try {
+                $file = $request->file('file');
+                $file_new_name = time() . $file->getClientOriginalName();
+                $file_name = $file->getClientOriginalName();
+                $file_extencion = $file->getClientOriginalExtension();
 
-        $file_path = 'uploads/';
-        $file->move($file_path, $file_new_name);
+                $file_path = public_path().'/uploads/';
+                $file->move($file_path, $file_new_name);
 
-        return response()->json(['file'=>
-                                ['name' => $file_name,
-                                 'new_name' => $file_new_name,
-                                 'extension' => $file_extencion,
-                                 'url' => $file_path]], 200);
+
+                return response()->json(['file'=>
+                    ['name' => $file_name,
+                        'new_name' => $file_new_name,
+                        'extension' => $file_extencion,
+                        'url' => $file_path]], 200);
+            } catch (Exception $e) {
+                return response()->json(['error' => $e], 200);;
+            }
+        }
     }
     /**
      * Display a listing of the resource.
