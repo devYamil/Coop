@@ -13809,10 +13809,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(2)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);", ""]);
 
 // module
-exports.push([module.i, "\n#customdropzone {\n    background-color: #b2dfdb;\n    font-family: 'Arial', sans-serif;\n    letter-spacing: 0.2px;\n    color: #777;\n    -webkit-transition: background-color .2s linear;\n    transition: background-color .2s linear;\n    padding: 2px;\n}\n#customdropzone .dz-preview {\n    width: 160px;\n    display: inline-block;\n    margin: 4px;\n    background-color: #b2dfdb;\n    min-height: 100px;\n}\n#customdropzone .dz-preview .dz-image {\n    width: 80px;\n    height: 80px;\n    margin-left: 40px;\n    margin-bottom: 10px;\n}\n#customdropzone .dz-preview .dz-image > div {\n    width: inherit;\n    height: inherit;\n    border-radius: 50%;\n    background-size: contain;\n}\n#customdropzone .dz-preview .dz-image > img {\n    width: 100%;\n}\n#customdropzone .dz-preview .dz-details {\n    color: white;\n    -webkit-transition: opacity .2s linear;\n    transition: opacity .2s linear;\n    text-align: center;\n}\n#customdropzone .dz-success-mark, .dz-error-mark, .dz-remove {\n    display: none;\n}\n", ""]);
+exports.push([module.i, "\n#customdropzone {\n    background-color: #b2dfdb;\n    font-family: 'Arial', sans-serif;\n    letter-spacing: 0.2px;\n    color: #777;\n    -webkit-transition: background-color .2s linear;\n    transition: background-color .2s linear;\n    padding: 2px;\n}\n#customdropzone .dz-preview {\n    width: 160px;\n    display: inline-block;\n    margin: 4px;\n    background-color: #b2dfdb;\n    min-height: 100px;\n}\n#customdropzone .dz-preview .dz-image {\n    width: 80px;\n    height: 80px;\n    margin-left: 40px;\n    margin-bottom: 10px;\n}\n#customdropzone .dz-preview .dz-image > div {\n    width: inherit;\n    height: inherit;\n    border-radius: 50%;\n    background-size: contain;\n}\n#customdropzone .dz-preview .dz-image > img {\n    width: 100%;\n}\n#customdropzone .dz-preview .dz-details {\n    color: white;\n    -webkit-transition: opacity .2s linear;\n    transition: opacity .2s linear;\n    text-align: center;\n}\n#customdropzone .dz-success-mark, .dz-error-mark, .dz-remove {\n    display: none;\n}\n* {\n    font-family: \"Roboto\", Arial, sans-serif;\n}\n.main-wrapper {\n    border-radius: 4px;\n    background-color: white;\n    padding: 20px;\n    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\n            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\n    position: relative;\n}\ni.material-icons {\n    font-size: 1.5rem;\n    color: white;\n    position: relative;\n    border-radius: 50%;\n    padding: 5px;\n    margin: 3px;\n    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n    -webkit-transition: color 0.2s ease, background-color 0.2s ease, -webkit-transform 0.3s ease;\n    transition: color 0.2s ease, background-color 0.2s ease, -webkit-transform 0.3s ease;\n    transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease;\n    transition: color 0.2s ease, background-color 0.2s ease, transform 0.3s ease, -webkit-transform 0.3s ease;\n}\ni.material-icons:after {\n    content: \"\";\n    width: 100%;\n    height: 100%;\n    border: solid 2px;\n    -webkit-transform: scale(0.8);\n            transform: scale(0.8);\n    position: absolute;\n    top: 0px;\n    left: 0px;\n    border-radius: 50%;\n    -webkit-transition: all 0.3s ease;\n    transition: all 0.3s ease;\n}\ni.material-icons:hover:after {\n    -webkit-transform: scale(1);\n            transform: scale(1);\n    -webkit-box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);\n            box-shadow: 10px 0 20px rgba(0, 0, 0, 0.19), 6px 0 6px rgba(0, 0, 0, 0.23);\n}\ni.material-icons:nth-of-type(4) {\n    background-color: #88b999;\n}\ni.material-icons:nth-of-type(4):hover {\n    color: #88b999;\n}\ni.material-icons:nth-of-type(4):after {\n    border-color: #88b999;\n}\ni.material-icons:nth-of-type(5) {\n    background-color: #88b2b9;\n}\ni.material-icons:nth-of-type(5):hover {\n    color: #88b2b9;\n}\ni.material-icons:nth-of-type(5):after {\n    border-color: #88b2b9;\n}\ni.material-icons:nth-of-type(6) {\n    background-color: #8897b9;\n}\ni.material-icons:nth-of-type(6):hover {\n    color: #8897b9;\n}\ni.material-icons:nth-of-type(6):after {\n    border-color: #8897b9;\n}\ni.material-icons:nth-of-type(7) {\n    background-color: #af88b9;\n}\ni.material-icons:nth-of-type(7):hover {\n    color: #af88b9;\n}\ni.material-icons:nth-of-type(7):after {\n    border-color: #af88b9;\n}\ni.material-icons:nth-of-type(8) {\n    background-color: #d59acb;\n}\ni.material-icons:nth-of-type(8):hover {\n    color: #d59acb;\n}\ni.material-icons:nth-of-type(8):after {\n    border-color: #d59acb;\n}\ni.material-icons:nth-of-type(1) {\n    background-color: #cd8484;\n}\ni.material-icons:nth-of-type(1):hover {\n    color: #cd8484;\n}\ni.material-icons:nth-of-type(1):after {\n    border-color: #cd8484;\n}\ni.material-icons:nth-of-type(2) {\n    background-color: #ec9f83;\n}\ni.material-icons:nth-of-type(2):hover {\n    color: #ec9f83;\n}\ni.material-icons:nth-of-type(2):after {\n    border-color: #ec9f83;\n}\ni.material-icons:nth-of-type(3) {\n    background-color: #cdb274;\n}\ni.material-icons:nth-of-type(3):hover {\n    color: #cdb274;\n}\ni.material-icons:nth-of-type(3):after {\n    border-color: #cdb274;\n}\ni.material-icons:hover {\n    background-color: transparent;\n    -webkit-transform: rotate(90deg);\n            transform: rotate(90deg);\n    cursor: pointer;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n}\np {\n    color: #999;\n    font-weight: 300;\n    margin-top: 20px;\n}\n@media (min-width:601px) {\ni.material-icons {\n        padding:10px;\n        margin:5px;\n        font-size:2rem;\n}\n}\n@media (min-width:993px) {\ni.material-icons {\n        padding:10px;\n        margin:5px;\n        font-size:2rem;\n}\ni.material-icons:after {\n        border-width:3px;\n        top:0px;\n        left:0px;\n}\n}\n", ""]);
 
 // exports
 
@@ -13860,6 +13860,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue2_dropzone__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_min_css__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_min_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue2_dropzone_dist_vue2Dropzone_min_css__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -14570,109 +14590,148 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "card-body" }, [
-                  _c("pre", { domProps: { innerHTML: _vm._s(_vm.countFile) } }),
-                  _vm._v(" "),
                   _c("div", { staticClass: "card-header border-0" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "get-start-area",
-                        staticStyle: { display: "inline-block !important" }
-                      },
-                      [
+                    _c("div", { staticClass: "row" }, [
+                      _vm._m(0),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-10" }, [
                         _c(
-                          "form",
+                          "div",
                           {
-                            staticClass: "form-inline",
-                            on: {
-                              submit: function($event) {
-                                $event.preventDefault()
-                                return _vm.validateForm($event)
-                              }
-                            }
+                            staticClass: "get-start-area",
+                            staticStyle: { display: "inline-block !important" }
                           },
                           [
-                            _c("textarea", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.Post.text,
-                                  expression: "Post.text"
-                                }
-                              ],
-                              staticClass: "form-control w-100",
-                              attrs: {
-                                type: "text",
-                                placeholder: "Nombre de la cooperativa"
-                              },
-                              domProps: { value: _vm.Post.text },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.Post,
-                                    "text",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("vue-dropzone", {
-                              directives: [
-                                {
-                                  name: "show",
-                                  rawName: "v-show",
-                                  value: _vm.showDropzone,
-                                  expression: "showDropzone"
-                                }
-                              ],
-                              ref: "myVueDropzone",
-                              attrs: {
-                                id: "customdropzone",
-                                options: _vm.dropzoneOptions
-                              },
-                              on: {
-                                "vdropzone-success": _vm.dropzoneSuccess,
-                                "vdropzone-complete": _vm.dropzoneComplete,
-                                "vdropzone-queue-complete":
-                                  _vm.dropzoneQueueComplete,
-                                "vdropzone-file-added": _vm.dropzoneFileAdded,
-                                "vdropzone-removed-file":
-                                  _vm.dropzoneRemovedFile
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("input", {
-                              staticClass: "submit",
-                              attrs: { type: "submit", value: "Publicar" }
-                            }),
-                            _vm._v(" "),
                             _c(
-                              "p",
+                              "form",
                               {
-                                directives: [
-                                  {
-                                    name: "show",
-                                    rawName: "v-show",
-                                    value: _vm.requireTextPost,
-                                    expression: "requireTextPost"
+                                staticClass: "form-inline",
+                                on: {
+                                  submit: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.validateForm($event)
                                   }
-                                ],
-                                staticStyle: { color: "red" }
+                                }
                               },
-                              [_vm._v("Debe Ingresar algun texto o imagen")]
+                              [
+                                _c("textarea", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.Post.text,
+                                      expression: "Post.text"
+                                    }
+                                  ],
+                                  staticClass: "form-control w-100",
+                                  attrs: {
+                                    type: "text",
+                                    placeholder: "Nombre de la cooperativa"
+                                  },
+                                  domProps: { value: _vm.Post.text },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.Post,
+                                        "text",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "main-wrapper",
+                                    staticStyle: { width: "100%" }
+                                  },
+                                  [
+                                    _c("vue-dropzone", {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.showDropzone,
+                                          expression: "showDropzone"
+                                        }
+                                      ],
+                                      ref: "myVueDropzone",
+                                      attrs: {
+                                        id: "customdropzone",
+                                        options: _vm.dropzoneOptions
+                                      },
+                                      on: {
+                                        "vdropzone-success":
+                                          _vm.dropzoneSuccess,
+                                        "vdropzone-complete":
+                                          _vm.dropzoneComplete,
+                                        "vdropzone-queue-complete":
+                                          _vm.dropzoneQueueComplete,
+                                        "vdropzone-file-added":
+                                          _vm.dropzoneFileAdded,
+                                        "vdropzone-removed-file":
+                                          _vm.dropzoneRemovedFile
+                                      }
+                                    }),
+                                    _vm._v(" "),
+                                    _vm._m(1),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("folder_open")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("refresh")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("search")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("explore")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("folder_open")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("autorenew")
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("i", { staticClass: "material-icons" }, [
+                                      _vm._v("add")
+                                    ])
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "p",
+                                  {
+                                    directives: [
+                                      {
+                                        name: "show",
+                                        rawName: "v-show",
+                                        value: _vm.requireTextPost,
+                                        expression: "requireTextPost"
+                                      }
+                                    ],
+                                    staticStyle: { color: "red" }
+                                  },
+                                  [_vm._v("Debe Ingresar algun texto o imagen")]
+                                )
+                              ]
                             )
-                          ],
-                          1
+                          ]
                         )
-                      ]
-                    )
+                      ])
+                    ])
                   ])
                 ])
               ]
@@ -14691,7 +14750,7 @@ var render = function() {
                 },
                 [
                   _c("div", { staticClass: "card-body" }, [
-                    _vm._m(1, true),
+                    _vm._m(2, true),
                     _vm._v(" "),
                     _c("p", { staticClass: "card-text card-custom-text" }, [
                       _vm._v(
@@ -14837,16 +14896,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-custom-avatar" }, [
-      _c("img", {
-        staticClass: "rounded-circle",
-        staticStyle: { width: "75px", height: "75px" },
-        attrs: {
-          src:
-            "https://res.cloudinary.com/yamil/image/upload/v1529422392/file_1529422390_652f311e-bb8d-4abe-925e-7f39a1aeb123.jpg"
-        }
-      })
+    return _c("div", { staticClass: "col-md-2" }, [
+      _c("div", { staticClass: "card-custom-avatar" }, [
+        _c("img", {
+          staticClass: "rounded-circle",
+          staticStyle: { width: "75px", height: "75px" },
+          attrs: {
+            src:
+              "https://res.cloudinary.com/yamil/image/upload/v1529422392/file_1529422390_652f311e-bb8d-4abe-925e-7f39a1aeb123.jpg"
+          }
+        })
+      ])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      { staticStyle: { border: "0" }, attrs: { type: "submit" } },
+      [_c("i", { staticClass: "material-icons" }, [_vm._v("near_me")])]
+    )
   },
   function() {
     var _vm = this

@@ -11,6 +11,7 @@
     <title>@yield('title')</title>
     <!-- Favicon -->
     <link rel="icon" href="{{ URL::asset('theme_ka/img/core-img/harcodedicon.png') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Core Stylesheet -->
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
