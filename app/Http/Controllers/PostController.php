@@ -49,7 +49,13 @@ class PostController extends Controller
             return response()->json($posts, 200);
         }
     }
-
+    public function firstPagePosts(Request $request){
+        // LIST FIRST 10 POSTs
+        if($request->json()){
+            $posts = Post::paginate();
+            return response()->json($posts, 200);
+        }
+    }
     /**
      * Show the form for creating a new resource.
      *

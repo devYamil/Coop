@@ -67,3 +67,8 @@ $routeMiddleware
 'jwt-auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class
 ** CREAR AUTENTICACION CONTROLLER
 php artisan make:controlle AutenticacionController
+
+
+MATAR PROCESOS EN MAC OS
+ lsof -i :4500          LISTAR PROCESOS
+ kill -9 PID            MATAR CON PROCESS ID

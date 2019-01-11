@@ -21,4 +21,7 @@ Route::post('registrar', 'AutenticacionController@registrar');
 Route::group( ['middleware' => 'jwt-auth'], function (){
     Route::resource('post', 'PostController');
     Route::post('file', 'PostController@storageFile');
+
+    // CUSTOM POSTs
+    Route::post('first-page-posts', 'PostController@firstPagePosts');
 });

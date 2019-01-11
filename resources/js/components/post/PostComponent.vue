@@ -94,6 +94,9 @@
                         </section>
                     </div>
                 </div>
+                <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
+                    ...
+                </div>
             </div>
         </div>
     </section>
@@ -101,6 +104,7 @@
 <script>
     import vue2Dropzone from 'vue2-dropzone'
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
+    import infiniteScroll from 'vue-infinite-scroll'
     const config = {
         headers: {'Authorization': "bearer " + localStorage.getItem('_tkn')}
     };
@@ -132,7 +136,8 @@
                     paramName: 'file',
                     headers: {'Authorization': "bearer " + localStorage.getItem('_tkn')}
                 },
-                countFile: 0
+                countFile: 0,
+                busy: false
             }
         },
         methods:{
@@ -214,6 +219,11 @@
             },
             dropzoneRemovedFile(){
                 this.countFile--;
+            },
+            loadMore: function() {
+                this.busy = true;
+                console.log('INGRESANDO AL LOAD MORE --->>>>');
+                this.busy = false;
             }
         },
         mounted() {

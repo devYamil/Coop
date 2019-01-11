@@ -21,6 +21,8 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "vue-infinite-scroll": "^2.0.2",
+        "vue-mugen-scroll": "^0.2.5",
         "vue-toasted": "^1.1.26",
         "vue2-dropzone": "^3.5.2",
         "vue2-form-validate": "^1.1.0"
