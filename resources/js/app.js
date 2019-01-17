@@ -26,7 +26,8 @@ Vue.component('iniciar-sesion-component', require('./components/user/IniciarSesi
 Vue.component('spinner-component', require('./components/extras/SpinnerComponent.vue'));
 Vue.component('dropzone-component', require('./components/post/DropZoneComponent.vue'));
 // const files = require.context('./', true, /\.vue$/i)
-
+// LIBRERIAS EXTERNAS
+Vue.component('InfiniteLoading', require('vue-infinite-loading'));
 // GLOBALs VARIABLES
 Vue.config.productionTip = false;
 Vue.prototype.$hostname = (Vue.config.productionTip) ? 'https://www.your-api.com' : 'http://127.0.0.1:4500';

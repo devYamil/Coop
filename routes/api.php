@@ -23,5 +23,5 @@ Route::group( ['middleware' => 'jwt-auth'], function (){
     Route::post('file', 'PostController@storageFile');
 
     // CUSTOM POSTs
-    Route::post('first-page-posts', 'PostController@firstPagePosts');
+    Route::get('first-page-posts', 'PostController@firstPagePosts');
 });

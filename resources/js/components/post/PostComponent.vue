@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;" v-for="post in posts">
+                <div class="card mb-3 mt-3" style="width: 100% !important; margin-top: 10px; z-index: 9;" v-for="post in posts">
                     <div class="card-body">
                         <div class="card-header border-0">
                             <div class="card-custom-avatar">
@@ -106,7 +106,9 @@
     import 'vue2-dropzone/dist/vue2Dropzone.min.css'
     import infiniteScroll from 'vue-infinite-scroll'
     const config = {
-        headers: {'Authorization': "bearer " + localStorage.getItem('_tkn')}
+        headers: {
+                'Authorization': "bearer " + localStorage.getItem('_tkn')
+        }
     };
     export default {
         components: {
@@ -228,28 +230,39 @@
         },
         mounted() {
             axios
-                .get('http://127.0.0.1:4500/api/post/', config)
+                .get('http://127.0.0.1:4500/api/first-page-posts', config)
                 .then( (res) => {
-                    console.log('RESULTADO MOUNTED : ', res);
                     var response = res.data;
                     for (var mypost in response)
                     {
+                        // SANITIZE RESOURSE TO JSON TYPE
+                        var resourse;
+                        try{
+                            resourse = JSON.parse(response[mypost].resource)
+                        }catch (e) {
+                            resourse = '';
+                        }
+                        var text;
+                        if (response[mypost].text == null){
+                            text = 'Sin mensaje';
+                        }else{
+                            text = response[mypost].text;
+                        }
                         this.posts.unshift(
                         {
                             id: 1,
                             id_user: 1,
-                            text: response[mypost].text,
-                            resource: JSON.parse(response[mypost].resource)
+                            text: text,
+                            resource: resourse
                         })
                     }
                 }).catch(error => {
-                    console.log('EERRROR: ', error);
                     this.$toasted
                         .error('Ocurrio un error al registrar el post!!')
                         .goAway(4000);
+                    console.log('ERROR LISTAR POSTS: ' , error);
                 });
             console.log('Component mounted  LIST POST.', this.$hostname)
-            baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
         }
     }
 </script>
