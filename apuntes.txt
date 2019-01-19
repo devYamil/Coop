@@ -72,3 +72,10 @@ php artisan make:controlle AutenticacionController
 MATAR PROCESOS EN MAC OS
  lsof -i :4500          LISTAR PROCESOS
  kill -9 PID            MATAR CON PROCESS ID
+
+
+ ERROR AL COPIAR UN PROYECTO
+ npm i -g cross-env
+ npm rebuild node-sass
+
+
