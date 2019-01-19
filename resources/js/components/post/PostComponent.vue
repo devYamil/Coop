@@ -232,10 +232,14 @@
             axios
                 .get('http://127.0.0.1:4500/api/first-page-posts', config)
                 .then( (res) => {
-                    var response = res.data;
-                    for (var mypost in response)
+
+                    var responsePosts = res.data.posts;
+                    var response = responsePosts.data;
+                    for (var mypost in response.reverse())
                     {
+                        console.log('POST DATA RESPONSE---> ', response[mypost]);
                         // SANITIZE RESOURSE TO JSON TYPE
+
                         var resourse;
                         try{
                             resourse = JSON.parse(response[mypost].resource)

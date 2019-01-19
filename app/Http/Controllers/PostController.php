@@ -54,7 +54,7 @@ class PostController extends Controller
             // LIST FIRST 10 POSTs
             if($request->json()){
                 $posts = Post::orderBy('id', 'DESC')->paginate();
-                return response()->json($posts, 200);
+                return response()->json(['posts'=>$posts], 200);
             }
         } catch(Exception $e) {
             return response()->json([
