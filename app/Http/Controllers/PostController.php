@@ -53,7 +53,7 @@ class PostController extends Controller
         try {
             // LIST FIRST 10 POSTs
             if($request->json()){
-                $posts = Post::orderBy('id', 'DESC')->paginate();
+                $posts = Post::orderBy('id', 'DESC')->paginate(10);
                 return response()->json(['posts'=>$posts], 200);
             }
         } catch(Exception $e) {

@@ -93,10 +93,9 @@
                             </div>
                         </section>
                     </div>
+                    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
                 </div>
-                <div v-infinite-scroll="loadMore" infinite-scroll-disabled="busy" infinite-scroll-distance="10">
-                    ...
-                </div>
+
             </div>
         </div>
     </section>
@@ -139,7 +138,8 @@
                     headers: {'Authorization': "bearer " + localStorage.getItem('_tkn')}
                 },
                 countFile: 0,
-                busy: false
+                busy: false,
+                page: 0,
             }
         },
         methods:{
@@ -226,6 +226,49 @@
                 this.busy = true;
                 console.log('INGRESANDO AL LOAD MORE --->>>>');
                 this.busy = false;
+            },
+            infiniteHandler($state){
+                this.page++;
+                console.log('ingresa al infinite loading');
+                var url = 'http://127.0.0.1:4500/api/first-page-posts?page='+this.page;
+                axios
+                    .get(url, config)
+                    .then( (res) => {
+
+                        var responsePosts = res.data.posts;
+                        var response = responsePosts.data;
+                        for (var mypost in response.reverse())
+                        {
+                            console.log('POST DATA RESPONSE---> ', response[mypost]);
+                            // SANITIZE RESOURSE TO JSON TYPE
+
+                            var resourse;
+                            try{
+                                resourse = JSON.parse(response[mypost].resource)
+                            }catch (e) {
+                                resourse = '';
+                            }
+                            var text;
+                            if (response[mypost].text == null){
+                                text = 'Sin mensaje';
+                            }else{
+                                text = response[mypost].text;
+                            }
+                            this.posts.unshift(
+                                {
+                                    id: 1,
+                                    id_user: 1,
+                                    text: text,
+                                    resource: resourse
+                                })
+                        }
+                        $state.complete();
+                    }).catch(error => {
+                    this.$toasted
+                        .error('Ocurrio un error al registrar el post!!')
+                        .goAway(4000);
+                    console.log('ERROR LISTAR POSTS: ' , error);
+                });
             }
         },
         mounted() {
@@ -266,7 +309,6 @@
                         .goAway(4000);
                     console.log('ERROR LISTAR POSTS: ' , error);
                 });
-            console.log('Component mounted  LIST POST.', this.$hostname)
         }
     }
 </script>

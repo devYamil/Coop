@@ -13965,7 +13965,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -14003,7 +14002,8 @@ var config = {
                 headers: { 'Authorization': "bearer " + localStorage.getItem('_tkn') }
             },
             countFile: 0,
-            busy: false
+            busy: false,
+            page: 0
         };
     },
 
@@ -14080,10 +14080,49 @@ var config = {
             this.busy = true;
             console.log('INGRESANDO AL LOAD MORE --->>>>');
             this.busy = false;
+        },
+        infiniteHandler: function infiniteHandler($state) {
+            var _this2 = this;
+
+            this.page++;
+            console.log('ingresa al infinite loading');
+            var url = 'http://127.0.0.1:4500/api/first-page-posts?page=' + this.page;
+            axios.get(url, config).then(function (res) {
+
+                var responsePosts = res.data.posts;
+                var response = responsePosts.data;
+                for (var mypost in response.reverse()) {
+                    console.log('POST DATA RESPONSE---> ', response[mypost]);
+                    // SANITIZE RESOURSE TO JSON TYPE
+
+                    var resourse;
+                    try {
+                        resourse = JSON.parse(response[mypost].resource);
+                    } catch (e) {
+                        resourse = '';
+                    }
+                    var text;
+                    if (response[mypost].text == null) {
+                        text = 'Sin mensaje';
+                    } else {
+                        text = response[mypost].text;
+                    }
+                    _this2.posts.unshift({
+                        id: 1,
+                        id_user: 1,
+                        text: text,
+                        resource: resourse
+                    });
+                }
+                $state.complete();
+            }).catch(function (error) {
+                _this2.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
+                console.log('ERROR LISTAR POSTS: ', error);
+            });
         }
     },
     mounted: function mounted() {
-        var _this2 = this;
+        var _this3 = this;
 
         axios.get('http://127.0.0.1:4500/api/first-page-posts', config).then(function (res) {
 
@@ -14105,7 +14144,7 @@ var config = {
                 } else {
                     text = response[mypost].text;
                 }
-                _this2.posts.unshift({
+                _this3.posts.unshift({
                     id: 1,
                     id_user: 1,
                     text: text,
@@ -14113,10 +14152,9 @@ var config = {
                 });
             }
         }).catch(function (error) {
-            _this2.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
+            _this3.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
             console.log('ERROR LISTAR POSTS: ', error);
         });
-        console.log('Component mounted  LIST POST.', this.$hostname);
     }
 });
 
@@ -15151,29 +15189,15 @@ var render = function() {
                           ]
                         )
                       : _vm._e()
-                  ])
-                ]
-              )
-            }),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                directives: [
-                  {
-                    name: "infinite-scroll",
-                    rawName: "v-infinite-scroll",
-                    value: _vm.loadMore,
-                    expression: "loadMore"
-                  }
+                  ]),
+                  _vm._v(" "),
+                  _c("infinite-loading", {
+                    on: { infinite: _vm.infiniteHandler }
+                  })
                 ],
-                attrs: {
-                  "infinite-scroll-disabled": "busy",
-                  "infinite-scroll-distance": "10"
-                }
-              },
-              [_vm._v("\n                ...\n            ")]
-            )
+                1
+              )
+            })
           ],
           2
         )
