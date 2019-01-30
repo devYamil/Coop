@@ -16,11 +16,13 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
+            $table->integer('id_cooperativa')->unsigned();
             $table->string('text')->default(NULL)->nullable();
             $table->longText('resource')->default(NULL)->nullable();
             $table->integer('status'); // SI PUBLICO, SI ESTA PENDIENTE, SI ESTA ELIMINADO
             $table->timestamps();
             $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_cooperativa')->references('id')->on('cooperativas');
         });
     }
 

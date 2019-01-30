@@ -35,8 +35,10 @@
                                                 <button type="submit" style="border: 0;">
                                                     <i class="material-icons">near_me</i>
                                                 </button>
+                                                <button type="button" v-on:click="showDropzoneArea('foo')">
+                                                    <i class="material-icons">folder_open</i>
+                                                </button>
 
-                                                <i class="material-icons">folder_open</i>
                                                 <i class="material-icons">refresh</i>
                                                 <i class="material-icons">search</i>
                                                 <i class="material-icons">explore</i>
@@ -73,7 +75,7 @@
                         <section class="gallery-block compact-gallery" v-if="post.resource.length > 0" >
                             <div class="container">
                                 <div class="row no-gutters">
-                                    <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in post.resource">
+                                    <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in JSON.parse(post.resource)">
                                         <div class="image-content"  v-if="myresource.extension == 'jpg'">
                                             <a class="lightbox" :href="'/uploads/' + myresource.new_name">
                                                 <img class="img-fluid image" :src="'/uploads/' + myresource.new_name">
@@ -93,10 +95,10 @@
                             </div>
                         </section>
                     </div>
-                    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
                 </div>
 
             </div>
+            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </div>
     </section>
 </template>
@@ -116,9 +118,8 @@
         data(){
             return {
                 requireTextPost: false,
-                showDropzone: true,
-                posts: [
-                ],
+                showDropzone: false,
+                posts: [],
                 Post: {
                     id_user: 2,
                     text: '',
@@ -143,6 +144,13 @@
             }
         },
         methods:{
+            showDropzoneArea: function(){
+                if(this.showDropzone == true){
+                    this.showDropzone = false;
+                }else{
+                    this.showDropzone = true;
+                }
+            },
             validateForm: function (){
                 let text = this.Post.text;
                 if (text.length > 0)
@@ -184,7 +192,7 @@
                                 id: 1,
                                 id_user: 1,
                                 text: response.text,
-                                resource: JSON.parse(response.resource)
+                                resource: response.resource
                             })
                         this.spinner = false;
                         this.$toasted
@@ -230,39 +238,19 @@
             infiniteHandler($state){
                 this.page++;
                 console.log('ingresa al infinite loading');
-                var url = 'http://127.0.0.1:4500/api/first-page-posts?page='+this.page;
+                var url = 'http://127.0.0.1:4500/api/paginate-post?page='+this.page;
                 axios
                     .get(url, config)
-                    .then( (res) => {
+                    .then( (response) => {
+                        let posts = response.data.data;
 
-                        var responsePosts = res.data.posts;
-                        var response = responsePosts.data;
-                        for (var mypost in response.reverse())
-                        {
-                            console.log('POST DATA RESPONSE---> ', response[mypost]);
-                            // SANITIZE RESOURSE TO JSON TYPE
-
-                            var resourse;
-                            try{
-                                resourse = JSON.parse(response[mypost].resource)
-                            }catch (e) {
-                                resourse = '';
-                            }
-                            var text;
-                            if (response[mypost].text == null){
-                                text = 'Sin mensaje';
-                            }else{
-                                text = response[mypost].text;
-                            }
-                            this.posts.unshift(
-                                {
-                                    id: 1,
-                                    id_user: 1,
-                                    text: text,
-                                    resource: resourse
-                                })
+                        if(posts.length){
+                            this.posts = this.posts.concat(posts)
+                            $state.loaded();
+                        }else{
+                            $state.complete();
                         }
-                        $state.complete();
+
                     }).catch(error => {
                     this.$toasted
                         .error('Ocurrio un error al registrar el post!!')
@@ -272,7 +260,7 @@
             }
         },
         mounted() {
-            axios
+            /*axios
                 .get('http://127.0.0.1:4500/api/first-page-posts', config)
                 .then( (res) => {
 
@@ -308,7 +296,7 @@
                         .error('Ocurrio un error al registrar el post!!')
                         .goAway(4000);
                     console.log('ERROR LISTAR POSTS: ' , error);
-                });
+                });*/
         }
     }
 </script>

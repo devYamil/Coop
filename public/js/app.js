@@ -13965,6 +13965,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -13981,7 +13983,7 @@ var config = {
     data: function data() {
         return {
             requireTextPost: false,
-            showDropzone: true,
+            showDropzone: false,
             posts: [],
             Post: {
                 id_user: 2,
@@ -14008,6 +14010,13 @@ var config = {
     },
 
     methods: {
+        showDropzoneArea: function showDropzoneArea() {
+            if (this.showDropzone == true) {
+                this.showDropzone = false;
+            } else {
+                this.showDropzone = true;
+            }
+        },
         validateForm: function validateForm() {
             var text = this.Post.text;
             if (text.length > 0) {
@@ -14047,7 +14056,7 @@ var config = {
                     id: 1,
                     id_user: 1,
                     text: response.text,
-                    resource: JSON.parse(response.resource)
+                    resource: response.resource
                 });
                 _this.spinner = false;
                 _this.$toasted.success('Publicacion creada correctamente!!').goAway(4000);
@@ -14086,35 +14095,16 @@ var config = {
 
             this.page++;
             console.log('ingresa al infinite loading');
-            var url = 'http://127.0.0.1:4500/api/first-page-posts?page=' + this.page;
-            axios.get(url, config).then(function (res) {
+            var url = 'http://127.0.0.1:4500/api/paginate-post?page=' + this.page;
+            axios.get(url, config).then(function (response) {
+                var posts = response.data.data;
 
-                var responsePosts = res.data.posts;
-                var response = responsePosts.data;
-                for (var mypost in response.reverse()) {
-                    console.log('POST DATA RESPONSE---> ', response[mypost]);
-                    // SANITIZE RESOURSE TO JSON TYPE
-
-                    var resourse;
-                    try {
-                        resourse = JSON.parse(response[mypost].resource);
-                    } catch (e) {
-                        resourse = '';
-                    }
-                    var text;
-                    if (response[mypost].text == null) {
-                        text = 'Sin mensaje';
-                    } else {
-                        text = response[mypost].text;
-                    }
-                    _this2.posts.unshift({
-                        id: 1,
-                        id_user: 1,
-                        text: text,
-                        resource: resourse
-                    });
+                if (posts.length) {
+                    _this2.posts = _this2.posts.concat(posts);
+                    $state.loaded();
+                } else {
+                    $state.complete();
                 }
-                $state.complete();
             }).catch(function (error) {
                 _this2.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
                 console.log('ERROR LISTAR POSTS: ', error);
@@ -14122,39 +14112,41 @@ var config = {
         }
     },
     mounted: function mounted() {
-        var _this3 = this;
-
-        axios.get('http://127.0.0.1:4500/api/first-page-posts', config).then(function (res) {
-
-            var responsePosts = res.data.posts;
-            var response = responsePosts.data;
-            for (var mypost in response.reverse()) {
-                console.log('POST DATA RESPONSE---> ', response[mypost]);
-                // SANITIZE RESOURSE TO JSON TYPE
-
-                var resourse;
-                try {
-                    resourse = JSON.parse(response[mypost].resource);
-                } catch (e) {
-                    resourse = '';
+        /*axios
+            .get('http://127.0.0.1:4500/api/first-page-posts', config)
+            .then( (res) => {
+                 var responsePosts = res.data.posts;
+                var response = responsePosts.data;
+                for (var mypost in response.reverse())
+                {
+                    console.log('POST DATA RESPONSE---> ', response[mypost]);
+                    // SANITIZE RESOURSE TO JSON TYPE
+                     var resourse;
+                    try{
+                        resourse = JSON.parse(response[mypost].resource)
+                    }catch (e) {
+                        resourse = '';
+                    }
+                    var text;
+                    if (response[mypost].text == null){
+                        text = 'Sin mensaje';
+                    }else{
+                        text = response[mypost].text;
+                    }
+                    this.posts.unshift(
+                    {
+                        id: 1,
+                        id_user: 1,
+                        text: text,
+                        resource: resourse
+                    })
                 }
-                var text;
-                if (response[mypost].text == null) {
-                    text = 'Sin mensaje';
-                } else {
-                    text = response[mypost].text;
-                }
-                _this3.posts.unshift({
-                    id: 1,
-                    id_user: 1,
-                    text: text,
-                    resource: resourse
-                });
-            }
-        }).catch(function (error) {
-            _this3.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
-            console.log('ERROR LISTAR POSTS: ', error);
-        });
+            }).catch(error => {
+                this.$toasted
+                    .error('Ocurrio un error al registrar el post!!')
+                    .goAway(4000);
+                console.log('ERROR LISTAR POSTS: ' , error);
+            });*/
     }
 });
 
@@ -14882,175 +14874,18 @@ var render = function() {
       attrs: { id: "inicio" }
     },
     [
-      _c("div", { staticClass: "container h-100" }, [
-        _c(
-          "div",
-          { staticClass: "row h-100 align-items-center" },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "card",
-                staticStyle: {
-                  width: "100% !important",
-                  "margin-top": "10px",
-                  "z-index": "9"
-                }
-              },
-              [
-                _c("div", { staticClass: "card-body" }, [
-                  _c("div", { staticClass: "card-header border-0" }, [
-                    _c("div", { staticClass: "row" }, [
-                      _vm._m(0),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "col-md-10" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "get-start-area",
-                            staticStyle: { display: "inline-block !important" }
-                          },
-                          [
-                            _c(
-                              "form",
-                              {
-                                staticClass: "form-inline",
-                                on: {
-                                  submit: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.validateForm($event)
-                                  }
-                                }
-                              },
-                              [
-                                _c("textarea", {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.Post.text,
-                                      expression: "Post.text"
-                                    }
-                                  ],
-                                  staticClass: "form-control w-100",
-                                  attrs: {
-                                    type: "text",
-                                    placeholder: "Nombre de la cooperativa"
-                                  },
-                                  domProps: { value: _vm.Post.text },
-                                  on: {
-                                    input: function($event) {
-                                      if ($event.target.composing) {
-                                        return
-                                      }
-                                      _vm.$set(
-                                        _vm.Post,
-                                        "text",
-                                        $event.target.value
-                                      )
-                                    }
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c(
-                                  "div",
-                                  {
-                                    staticClass: "main-wrapper",
-                                    staticStyle: { width: "100%" }
-                                  },
-                                  [
-                                    _c("vue-dropzone", {
-                                      directives: [
-                                        {
-                                          name: "show",
-                                          rawName: "v-show",
-                                          value: _vm.showDropzone,
-                                          expression: "showDropzone"
-                                        }
-                                      ],
-                                      ref: "myVueDropzone",
-                                      attrs: {
-                                        id: "customdropzone",
-                                        options: _vm.dropzoneOptions
-                                      },
-                                      on: {
-                                        "vdropzone-success":
-                                          _vm.dropzoneSuccess,
-                                        "vdropzone-complete":
-                                          _vm.dropzoneComplete,
-                                        "vdropzone-queue-complete":
-                                          _vm.dropzoneQueueComplete,
-                                        "vdropzone-file-added":
-                                          _vm.dropzoneFileAdded,
-                                        "vdropzone-removed-file":
-                                          _vm.dropzoneRemovedFile
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _vm._m(1),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("folder_open")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("refresh")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("search")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("explore")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("folder_open")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("autorenew")
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("i", { staticClass: "material-icons" }, [
-                                      _vm._v("add")
-                                    ])
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "p",
-                                  {
-                                    directives: [
-                                      {
-                                        name: "show",
-                                        rawName: "v-show",
-                                        value: _vm.requireTextPost,
-                                        expression: "requireTextPost"
-                                      }
-                                    ],
-                                    staticStyle: { color: "red" }
-                                  },
-                                  [_vm._v("Debe Ingresar algun texto o imagen")]
-                                )
-                              ]
-                            )
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.posts, function(post) {
-              return _c(
+      _c(
+        "div",
+        { staticClass: "container h-100" },
+        [
+          _c(
+            "div",
+            { staticClass: "row h-100 align-items-center" },
+            [
+              _c(
                 "div",
                 {
-                  staticClass: "card mb-3 mt-3",
+                  staticClass: "card",
                   staticStyle: {
                     width: "100% !important",
                     "margin-top": "10px",
@@ -15059,149 +14894,344 @@ var render = function() {
                 },
                 [
                   _c("div", { staticClass: "card-body" }, [
-                    _vm._m(2, true),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text card-custom-text" }, [
-                      _vm._v(
-                        "\n                        " +
-                          _vm._s(post.text) +
-                          "\n                    "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    post.resource.length > 0
-                      ? _c(
-                          "section",
-                          { staticClass: "gallery-block compact-gallery" },
-                          [
-                            _c("div", { staticClass: "container" }, [
+                    _c("div", { staticClass: "card-header border-0" }, [
+                      _c("div", { staticClass: "row" }, [
+                        _vm._m(0),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col-md-10" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "get-start-area",
+                              staticStyle: {
+                                display: "inline-block !important"
+                              }
+                            },
+                            [
                               _c(
-                                "div",
-                                { staticClass: "row no-gutters" },
-                                _vm._l(post.resource, function(myresource) {
-                                  return _c(
+                                "form",
+                                {
+                                  staticClass: "form-inline",
+                                  on: {
+                                    submit: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.validateForm($event)
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("textarea", {
+                                    directives: [
+                                      {
+                                        name: "model",
+                                        rawName: "v-model",
+                                        value: _vm.Post.text,
+                                        expression: "Post.text"
+                                      }
+                                    ],
+                                    staticClass: "form-control w-100",
+                                    attrs: {
+                                      type: "text",
+                                      placeholder: "Nombre de la cooperativa"
+                                    },
+                                    domProps: { value: _vm.Post.text },
+                                    on: {
+                                      input: function($event) {
+                                        if ($event.target.composing) {
+                                          return
+                                        }
+                                        _vm.$set(
+                                          _vm.Post,
+                                          "text",
+                                          $event.target.value
+                                        )
+                                      }
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
                                     "div",
                                     {
-                                      staticClass:
-                                        "col-md-6 col-lg-4 item zoom-on-hover"
+                                      staticClass: "main-wrapper",
+                                      staticStyle: { width: "100%" }
                                     },
                                     [
-                                      myresource.extension == "jpg"
-                                        ? _c(
-                                            "div",
-                                            { staticClass: "image-content" },
-                                            [
-                                              _c(
-                                                "a",
-                                                {
-                                                  staticClass: "lightbox",
-                                                  attrs: {
-                                                    href:
-                                                      "/uploads/" +
-                                                      myresource.new_name
-                                                  }
-                                                },
-                                                [
-                                                  _c("img", {
-                                                    staticClass:
-                                                      "img-fluid image",
+                                      _c("vue-dropzone", {
+                                        directives: [
+                                          {
+                                            name: "show",
+                                            rawName: "v-show",
+                                            value: _vm.showDropzone,
+                                            expression: "showDropzone"
+                                          }
+                                        ],
+                                        ref: "myVueDropzone",
+                                        attrs: {
+                                          id: "customdropzone",
+                                          options: _vm.dropzoneOptions
+                                        },
+                                        on: {
+                                          "vdropzone-success":
+                                            _vm.dropzoneSuccess,
+                                          "vdropzone-complete":
+                                            _vm.dropzoneComplete,
+                                          "vdropzone-queue-complete":
+                                            _vm.dropzoneQueueComplete,
+                                          "vdropzone-file-added":
+                                            _vm.dropzoneFileAdded,
+                                          "vdropzone-removed-file":
+                                            _vm.dropzoneRemovedFile
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _vm._m(1),
+                                      _vm._v(" "),
+                                      _c(
+                                        "button",
+                                        {
+                                          attrs: { type: "button" },
+                                          on: {
+                                            click: function($event) {
+                                              _vm.showDropzoneArea("foo")
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "i",
+                                            { staticClass: "material-icons" },
+                                            [_vm._v("folder_open")]
+                                          )
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("refresh")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("search")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("explore")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("folder_open")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("autorenew")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "i",
+                                        { staticClass: "material-icons" },
+                                        [_vm._v("add")]
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "show",
+                                          rawName: "v-show",
+                                          value: _vm.requireTextPost,
+                                          expression: "requireTextPost"
+                                        }
+                                      ],
+                                      staticStyle: { color: "red" }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "Debe Ingresar algun texto o imagen"
+                                      )
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _vm._l(_vm.posts, function(post) {
+                return _c(
+                  "div",
+                  {
+                    staticClass: "card mb-3 mt-3",
+                    staticStyle: {
+                      width: "100% !important",
+                      "margin-top": "10px",
+                      "z-index": "9"
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "card-body" }, [
+                      _vm._m(2, true),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text card-custom-text" }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(post.text) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      post.resource.length > 0
+                        ? _c(
+                            "section",
+                            { staticClass: "gallery-block compact-gallery" },
+                            [
+                              _c("div", { staticClass: "container" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "row no-gutters" },
+                                  _vm._l(JSON.parse(post.resource), function(
+                                    myresource
+                                  ) {
+                                    return _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "col-md-6 col-lg-4 item zoom-on-hover"
+                                      },
+                                      [
+                                        myresource.extension == "jpg"
+                                          ? _c(
+                                              "div",
+                                              { staticClass: "image-content" },
+                                              [
+                                                _c(
+                                                  "a",
+                                                  {
+                                                    staticClass: "lightbox",
                                                     attrs: {
-                                                      src:
+                                                      href:
                                                         "/uploads/" +
                                                         myresource.new_name
                                                     }
-                                                  }),
-                                                  _vm._v(" "),
-                                                  _c(
-                                                    "span",
-                                                    {
-                                                      staticClass: "description"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticClass:
-                                                            "description-heading"
-                                                        },
-                                                        [
-                                                          _vm._v(
-                                                            _vm._s(
-                                                              myresource.new_name
+                                                  },
+                                                  [
+                                                    _c("img", {
+                                                      staticClass:
+                                                        "img-fluid image",
+                                                      attrs: {
+                                                        src:
+                                                          "/uploads/" +
+                                                          myresource.new_name
+                                                      }
+                                                    }),
+                                                    _vm._v(" "),
+                                                    _c(
+                                                      "span",
+                                                      {
+                                                        staticClass:
+                                                          "description"
+                                                      },
+                                                      [
+                                                        _c(
+                                                          "span",
+                                                          {
+                                                            staticClass:
+                                                              "description-heading"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              _vm._s(
+                                                                myresource.new_name
+                                                              )
                                                             )
-                                                          )
-                                                        ]
-                                                      ),
-                                                      _vm._v(" "),
-                                                      _c(
-                                                        "span",
-                                                        {
-                                                          staticClass:
-                                                            "description-body"
-                                                        },
-                                                        [
-                                                          _vm._v(
-                                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        : _vm._e(),
-                                      _vm._v(" "),
-                                      myresource.extension == "mp4"
-                                        ? _c(
-                                            "div",
-                                            { staticClass: "video-content" },
-                                            [
-                                              _c(
-                                                "video",
-                                                {
-                                                  attrs: {
-                                                    width: "320",
-                                                    height: "240",
-                                                    controls: ""
-                                                  }
-                                                },
-                                                [
-                                                  _c("source", {
+                                                          ]
+                                                        ),
+                                                        _vm._v(" "),
+                                                        _c(
+                                                          "span",
+                                                          {
+                                                            staticClass:
+                                                              "description-body"
+                                                          },
+                                                          [
+                                                            _vm._v(
+                                                              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                                                            )
+                                                          ]
+                                                        )
+                                                      ]
+                                                    )
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        myresource.extension == "mp4"
+                                          ? _c(
+                                              "div",
+                                              { staticClass: "video-content" },
+                                              [
+                                                _c(
+                                                  "video",
+                                                  {
                                                     attrs: {
-                                                      src:
-                                                        "/uploads/" +
-                                                        myresource.new_name,
-                                                      type: "video/mp4"
+                                                      width: "320",
+                                                      height: "240",
+                                                      controls: ""
                                                     }
-                                                  })
-                                                ]
-                                              )
-                                            ]
-                                          )
-                                        : _vm._e()
-                                    ]
-                                  )
-                                })
-                              )
-                            ])
-                          ]
-                        )
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("infinite-loading", {
-                    on: { infinite: _vm.infiniteHandler }
-                  })
-                ],
-                1
-              )
-            })
-          ],
-          2
-        )
-      ])
+                                                  },
+                                                  [
+                                                    _c("source", {
+                                                      attrs: {
+                                                        src:
+                                                          "/uploads/" +
+                                                          myresource.new_name,
+                                                        type: "video/mp4"
+                                                      }
+                                                    })
+                                                  ]
+                                                )
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
+                                    )
+                                  })
+                                )
+                              ])
+                            ]
+                          )
+                        : _vm._e()
+                    ])
+                  ]
+                )
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("infinite-loading", { on: { infinite: _vm.infiniteHandler } })
+        ],
+        1
+      )
     ]
   )
 }

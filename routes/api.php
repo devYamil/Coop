@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,7 +19,7 @@ Route::post('registrar', 'AutenticacionController@registrar');
 Route::group( ['middleware' => 'jwt-auth'], function (){
     Route::resource('post', 'PostController');
     Route::post('file', 'PostController@storageFile');
-
+    Route::get('paginate-post', 'PostController@paginatePost');
     // CUSTOM POSTs
     Route::get('first-page-posts', 'PostController@firstPagePosts');
 });

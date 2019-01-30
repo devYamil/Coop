@@ -49,6 +49,9 @@ class PostController extends Controller
             return response()->json($posts, 200);
         }
     }
+    public function paginatePost(){
+        return Post::orderBy('id', 'DESC')->paginate(5);
+    }
     public function firstPagePosts(Request $request){
         try {
             // LIST FIRST 10 POSTs

@@ -2,6 +2,7 @@
 
 namespace Coop\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use JWTAuth; // NECESITO LA CLASE JWTAUTH ALIAS
 use Tymon\JWTAuth\Exceptions\JWTException; // NECESITO LA CLASE JWTException
 use Coop\User;
@@ -16,9 +17,18 @@ class AutenticacionController extends Controller
         }catch (JWTException $e){
             return response()->json(['error'=>'no se creo el tocken'], 500);
         }
-
-        return response()->json(['token'=> $token], 201);
+        //$currentUser = Auth::user();
+        $currentUser = Auth::user();
+        return response()->json(['token'=> $token, 'current_user' => $currentUser], 201);
     }
+    /*
+     * REGISTRAR USUARIOS
+     * TIPOS DE USUARIOS .-
+     * 0 NORMALES
+     * 1 USUARIOS PRESIDENTES DE CADA COOPERATIVA
+     * 2 SUPER ADMIN
+     * USUARIOS NORMALES ESTARAN CON ID COOPERATIVA 0 PORQUE PUEDEN VER TODAS LAS COOPERATIVAS
+     */
     public function registrar(Request $request){
         if($request->json()){
             $name = $request->input('name');
@@ -28,6 +38,8 @@ class AutenticacionController extends Controller
             if ($user === null) {
                 $usuario = User::create([
                     'name' => $name,
+                    'id_cooperativa' => 0,
+                    'type_user' => 0,
                     'email' => $email,
                     'password' => $password
                 ]);
