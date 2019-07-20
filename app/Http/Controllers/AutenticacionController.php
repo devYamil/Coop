@@ -17,8 +17,7 @@ class AutenticacionController extends Controller
         }catch (JWTException $e){
             return response()->json(['error'=>'no se creo el tocken'], 500);
         }
-        //$currentUser = Auth::user();
-        $currentUser = Auth::user();
+        $currentUser = $this->getUserData();
         return response()->json(['token'=> $token, 'current_user' => $currentUser], 201);
     }
     /*
@@ -44,7 +43,8 @@ class AutenticacionController extends Controller
                     'password' => $password
                 ]);
                 $token = JWTAuth::fromUser($usuario);
-                return response()->json(['token'=>$token], 201);
+                $currentUser = $this->getUserData();
+                return response()->json(['token'=>$token, 'current_user' => $currentUser], 201);
             }else{
                 return response()->json(['error'=>'You user already in use', 'code' => 1000], 400);
             }
@@ -53,6 +53,7 @@ class AutenticacionController extends Controller
         }
     }
     public function getUserData(){
-        //code
+        $currentUser = Auth::user();
+        return $currentUser;
     }
 }

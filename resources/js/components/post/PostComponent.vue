@@ -1,104 +1,183 @@
 <template>
     <section style="padding-top: 200px;" class="wellcome_area clearfix" id="inicio">
-        <div class="container h-100" >
-            <div class="row h-100 align-items-center">
-                <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
-                    <div class="card-body">
-                        <!--<pre v-html="countFile"></pre>-->
-                        <!--<pre v-html="posts"></pre>-->
-                        <div class="card-header border-0">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="card-custom-avatar">
-                                        <img style="width: 75px; height: 75px;" class="rounded-circle" src="https://res.cloudinary.com/yamil/image/upload/v1529422392/file_1529422390_652f311e-bb8d-4abe-925e-7f39a1aeb123.jpg">
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-                                    <div class="get-start-area" style="display: inline-block !important;">
-                                        <form @submit.prevent="validateForm" class="form-inline">
-                                    <textarea v-model="Post.text" type="text" placeholder="Nombre de la cooperativa" class="form-control w-100">
-                                    </textarea>
-                                            <div class="main-wrapper" style="width: 100%;">
-                                                <!-- DROPZONE -->
-                                                <vue-dropzone
-                                                        v-show="showDropzone"
-                                                        ref="myVueDropzone"
-                                                        id="customdropzone"
-                                                        :options="dropzoneOptions"
-                                                        @vdropzone-success="dropzoneSuccess"
-                                                        @vdropzone-complete="dropzoneComplete"
-                                                        @vdropzone-queue-complete="dropzoneQueueComplete"
-                                                        @vdropzone-file-added="dropzoneFileAdded"
-                                                        @vdropzone-removed-file="dropzoneRemovedFile"
-                                                >
-                                                </vue-dropzone>
-                                                <button type="submit" style="border: 0;">
-                                                    <i class="material-icons">near_me</i>
-                                                </button>
-                                                <button type="button" v-on:click="showDropzoneArea('foo')">
-                                                    <i class="material-icons">folder_open</i>
-                                                </button>
+        <div class="container-fluid h-100" >
 
-                                                <i class="material-icons">refresh</i>
-                                                <i class="material-icons">search</i>
-                                                <i class="material-icons">explore</i>
-                                                <i class="material-icons">folder_open</i>
-                                                <i class="material-icons">autorenew</i>
-                                                <i class="material-icons">add</i>
-                                            </div>
-                                            <p v-show="requireTextPost" style="color: red;">Debe Ingresar algun texto o imagen</p>
-                                        </form>
-                                    </div>
-                                </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
                             </div>
-
-
+                        </div>
+                    </div>
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="card-link">Card link</a>
+                                <a href="#" class="card-link">Another link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card mb-3 mt-3" style="width: 100% !important; margin-top: 10px; z-index: 9;" v-for="post in posts">
-                    <div class="card-body">
-                        <div class="card-header border-0">
-                            <div class="card-custom-avatar">
-                                <img style="width: 75px; height: 75px;" class="rounded-circle" src="https://res.cloudinary.com/yamil/image/upload/v1529422392/file_1529422390_652f311e-bb8d-4abe-925e-7f39a1aeb123.jpg">
-                            </div>
-                            <div class="card-custom-title">
-                                <p class="card-title card-title-user">Yamil Alejo Perez</p>
-                                <p class="card-title card-title-date">Publicado el 4 de diciembre</p>
-                            </div>
+                <div class="col-md-6">
+                    <div class="row h-100 align-items-center">
+                        <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                            <div class="card-body">
+                                <!--<pre v-html="countFile"></pre>-->
+                                <!--<pre v-html="posts"></pre>-->
+                                <div class="card-header border-0">
+                                    <div class="row">
+                                        <div class="col-md-2 " style="padding-left: 42px;">
+                                            <div class="card-custom-avatar">
+                                                <img style="width: 75px; height: 75px;" class="rounded-circle" src="https://res.cloudinary.com/yamil/image/upload/v1552620086/kisspng-avatar-user-computer-icons-software-developer-5b327cc9cc15f7.872727801530035401836_unlzmx.png">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10">
+                                            <div class="get-start-area" style="display: inline-block !important;">
+                                                <form @submit.prevent="validateForm" class="form-inline">
+                                    <textarea v-model="Post.text" type="text" placeholder="Ingrese la noticia o actividad a relizar" class="form-control w-100">
+                                    </textarea>
+                                                    <div class="main-wrapper" style="width: 100%;">
+                                                        <!-- DROPZONE -->
+                                                        <vue-dropzone
+                                                                v-show="showDropzone"
+                                                                ref="myVueDropzone"
+                                                                id="customdropzone"
+                                                                :options="dropzoneOptions"
+                                                                @vdropzone-success="dropzoneSuccess"
+                                                                @vdropzone-complete="dropzoneComplete"
+                                                                @vdropzone-queue-complete="dropzoneQueueComplete"
+                                                                @vdropzone-file-added="dropzoneFileAdded"
+                                                                @vdropzone-removed-file="dropzoneRemovedFile"
+                                                        >
+                                                        </vue-dropzone>
+                                                        <button type="submit" style="border: 0;">
+                                                            <i class="material-icons">near_me</i>
+                                                        </button>
+                                                        <button type="button" v-on:click="showDropzoneArea('foo')">
+                                                            <i class="material-icons">folder_open</i>
+                                                        </button>
 
+                                                        <i class="material-icons">refresh</i>
+                                                        <i class="material-icons">search</i>
+                                                        <i class="material-icons">explore</i>
+                                                        <i class="material-icons">folder_open</i>
+                                                        <i class="material-icons">autorenew</i>
+                                                        <i class="material-icons">add</i>
+                                                    </div>
+                                                    <p v-show="requireTextPost" style="color: red;">Debe Ingresar algun texto o imagen</p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
                         </div>
-                        <p class="card-text card-custom-text">
-                            {{post.text}}
-                        </p>
+                        <div class="card mb-3 mt-3" style="width: 100% !important; margin-top: 10px; z-index: 9;" v-for="post in posts">
+                            <div class="card-body">
+                                <div class="card-header border-0">
+                                    <div class="card-custom-avatar">
+                                        <img style="width: 75px; height: 75px;" class="rounded-circle" src="https://res.cloudinary.com/yamil/image/upload/v1552620086/kisspng-avatar-user-computer-icons-software-developer-5b327cc9cc15f7.872727801530035401836_unlzmx.png">
+                                    </div>
+                                    <div class="card-custom-title">
+                                        <p class="card-title card-title-user">{{post.name}}</p>
+                                        <p class="card-title card-title-date">{{post.publicado}}</p>
+                                    </div>
 
-                        <section class="gallery-block compact-gallery" v-if="post.resource.length > 0" >
-                            <div class="container">
-                                <div class="row no-gutters">
-                                    <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in JSON.parse(post.resource)">
-                                        <div class="image-content"  v-if="myresource.extension == 'jpg'">
-                                            <a class="lightbox" :href="'/uploads/' + myresource.new_name">
-                                                <img class="img-fluid image" :src="'/uploads/' + myresource.new_name">
-                                                <span class="description">
+                                </div>
+                                <p class="card-text card-custom-text">
+                                    {{post.text}}
+                                </p>
+
+                                <section class="gallery-block compact-gallery" v-if="post.resource.length > 0" >
+                                    <div class="container">
+                                        <div class="row no-gutters">
+                                            <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in JSON.parse(post.resource)">
+                                                <div class="image-content"  v-if="myresource.extension == 'jpg' || myresource.extension == 'png'">
+                                                    <a class="lightbox" :href="'/uploads/' + myresource.new_name">
+                                                        <img class="img-fluid image" style="width: 500px !important;" :src="'/uploads/' + myresource.new_name">
+                                                        <span class="description">
                                                 <span class="description-heading">{{myresource.new_name}}</span>
                                                 <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
                                             </span>
-                                            </a>
-                                        </div>
-                                        <div class="video-content" v-if="myresource.extension == 'mp4'">
-                                            <video width="320" height="240" controls>
-                                                <source :src="'/uploads/' + myresource.new_name" type="video/mp4">
-                                            </video>
+                                                    </a>
+                                                </div>
+                                                <div class="image-content"  v-if="myresource.extension == 'pdf'">
+                                                    <a class="lightbox" :href="'/uploads/' + myresource.new_name">
+                                                        <img class="img-fluid image" style="width: 500px !important;" :src="'/image_default/previewpdf.png'">
+                                                        <span class="description">
+                                                <span class="description-heading">{{myresource.new_name}}</span>
+                                                <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                                            </span>
+                                                    </a>
+                                                </div>
+                                                <div class="video-content" v-if="myresource.extension == 'mp4'">
+                                                    <video width="320" height="240" controls>
+                                                        <source :src="'/uploads/' + myresource.new_name" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </section>
                             </div>
-                        </section>
+                        </div>
+
+                    </div>
+                    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 100% !important; margin-top: 10px; z-index: 9;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="card-link">Card link</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <infinite-loading @infinite="infiniteHandler"></infinite-loading>
         </div>
     </section>
 </template>
@@ -129,7 +208,7 @@
                 dropzoneOptions: {
                     url: this.$hostname + this.$api_file,
                     method: 'POST',
-                    acceptedFiles: "video/*,image/*",
+                    acceptedFiles: "video/*,image/*,application/pdf",
                     timeout: null,
                     thumbnailWidth: 150,
                     maxFilesize: 40,
@@ -141,6 +220,7 @@
                 countFile: 0,
                 busy: false,
                 page: 0,
+                id_cooperativa: 0
             }
         },
         methods:{
@@ -180,20 +260,24 @@
                     id_user: this.Post.id_user,
                     text: this.Post.text,
                     resource: this.Post.resource,
-                    status: this.Post.status
+                    status: this.Post.status,
+                    id_cooperativa: this.id_cooperativa
                 };
 
                 axios
                     .post('http://127.0.0.1:4500/api/post/', bodyParameter, config)
                     .then( (res) => {
-                        var response = res.data.post;
+                        console.log('respuesta de mi post : ', res);
+                        var response = res.data.post[0];
                         this.posts.unshift(
                             {
                                 id: 1,
                                 id_user: 1,
                                 text: response.text,
-                                resource: response.resource
-                            })
+                                resource: response.resource,
+                                name: response.name,
+                                publicado: response.publicado
+                            });
                         this.spinner = false;
                         this.$toasted
                             .success('Publicacion creada correctamente!!')
@@ -238,7 +322,7 @@
             infiniteHandler($state){
                 this.page++;
                 console.log('ingresa al infinite loading');
-                var url = 'http://127.0.0.1:4500/api/paginate-post?page='+this.page;
+                var url = 'http://127.0.0.1:4500/api/paginate-post?page='+ this.page + '&id_cooperativa='+this.id_cooperativa;
                 axios
                     .get(url, config)
                     .then( (response) => {
@@ -260,6 +344,7 @@
             }
         },
         mounted() {
+            this.id_cooperativa = window.location.href.split('/').pop();
             /*axios
                 .get('http://127.0.0.1:4500/api/first-page-posts', config)
                 .then( (res) => {

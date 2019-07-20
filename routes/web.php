@@ -12,5 +12,7 @@
 */
 
 Route::resource('/', 'InicioController');
-Route::resource('/cooperativa', 'CooperativaController');
+Route::any('/federaciones/{id_producto?}', 'CooperativaController@federaciones');
+Route::resource('/actividades', 'CooperativaController');
+
 

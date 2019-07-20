@@ -14,15 +14,39 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Core Stylesheet -->
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
+    <!-- CUSTOM STYLE CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani&display=swap" rel="stylesheet">
+    <link href="{{ URL::asset('css/style_custom.css') }}" rel="stylesheet">
     <!-- Responsive CSS -->
     <link href="{{ URL::asset('theme_ka/css/responsive.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('gallery-card/baguetteBox.min.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('gallery-card/compact-gallery.css') }}">
+
+    <!-- CSS STYLE-->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('revolution-slider/css/style.css') }}" media="screen" />
+
+    <!-- THE PREVIEW STYLE SHEETS, NO NEED TO LOAD IN YOUR DOM -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('revolution-slider/css/navstylechange.css') }}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('revolution-slider/css/noneed.css') }}" media="screen" />
+
+
+
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('revolution-slider/src/css/settings.css') }}" media="screen" />
+    <style>
+        .container-full {
+            top: 50px;
+            margin: 0 auto;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 <!-- Preloader Start -->
 <div id="preloader">
     <div class="colorlib-load"></div>
+    <h1>Fencopas</h1>
 </div>
 <div id="app">
     @yield('content-app')
@@ -31,7 +55,7 @@
 <footer class="footer-social-icon text-center section_padding_70 clearfix">
     <!-- footer logo -->
     <div class="footer-text">
-        <h2>CONCOBOL</h2>
+        <h2>FENCOPAS</h2>
     </div>
     <!-- social icon-->
     <div class="footer-social-icon">
@@ -61,6 +85,9 @@
 <script src="{{ elixir('js/app.js') }}"></script>  <!-- ADD VUE JS -->
 <!-- Jquery-2.2.4 JS -->
 <script src="{{ URL::asset('theme_ka/js/jquery-2.2.4.min.js') }}"></script>
+<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+<script type="text/javascript" src="{{ URL::asset('revolution-slider/src/js/jquery.themepunch.plugins.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('revolution-slider/src/js/jquery.themepunch.revolution.min.js') }}"></script>
 <!-- Popper js -->
 <script src="{{ URL::asset('theme_ka/js/popper.min.js') }}"></script>
 <!-- Bootstrap-4 Beta JS -->
@@ -75,10 +102,32 @@
 <script src="{{ URL::asset('theme_ka/js/active.js') }}"></script>
 
 <script src="{{ URL::asset('gallery-card/baguetteBox.min.js') }}"></script>
+
+
+
+
+
 <script>
     baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
 </script>
+<script type="text/javascript">
 
+    var revapi;
+
+    jQuery(document).ready(function() {
+
+        revapi = jQuery('.tp-banner').revolution(
+            {
+                delay:9000,
+                startwidth:1170,
+                startheight:500,
+                hideThumbs:10
+
+            });
+
+    });	//ready
+
+</script>
 </body>
 
 </html>

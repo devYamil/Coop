@@ -79,3 +79,45 @@ MATAR PROCESOS EN MAC OS
  npm rebuild node-sass
 
 
+$this->addSeparatorCustom($newSection);
+
+
+ public function addSeparatorCustom(Section $section){
+        $section->addTextBreak();
+        $lineStyle = array('weight' => 0.2, 'width' => 150, 'height' => 0, 'align' => 'center');
+        $section->addTextBreak(2);
+    }
+
+
+    /*$newSection->addImage(
+            $file_path.'logo_inicial.jpg',
+            array(
+                'width'            => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(8)),
+                'height'           => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(8)),
+                 'align'=>'center',
+            )
+        );*/
+
+
+        /*$header->addWatermark($file_path.'logo_encabezado.png',
+            array('width' => 535,
+                'height' => 535,
+                'positioning' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
+                'posHorizontal' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
+                'posVertical' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
+                'marginLeft' => -8.5,
+                'marginTop' => -5.5,
+                'wrappingStyle' => 'infront'
+            ));*/
+
+            /*$header->addImage($file_path.'logo_encabezado.png',
+                                                        array(
+                                                                'width' => 900,
+                                                                'height' => 80,
+                                                                'align' => 'start',
+                                                                'positioning' => 'absolute',
+                                                                'marginTop' => -1,
+                                                                'marginLeft' => -1,
+                                                                'wrappingStyle' => 'behind'
+                                                        )
+                          );*/

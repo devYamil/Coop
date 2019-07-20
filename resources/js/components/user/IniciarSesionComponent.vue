@@ -5,7 +5,7 @@
                 <!--<pre v-html="User"></pre> -->
                 <!-- Modal Header -->
                 <div class="modal-header modal-header-registrar-usuario">
-                    <h4 class="modal-title modal-title-registrar-usuario">Iniciar Usuario</h4>
+                    <h4 class="modal-title modal-title-registrar-usuario">Iniciar Sesion</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
@@ -50,6 +50,7 @@
     </div>
 </template>
 <script>
+    import EventBus from '../../event-bus'
     export default {
         data(){
           return {
@@ -77,6 +78,7 @@
                         this.$toasted
                             .success('Usted acaba de iniciar sesion!!')
                             .goAway(4000);
+                        EventBus.$emit('usuario-logueado', res.data.current_user);
                         const elemModalRegisterUser = this.$refs.closeMIS;
                         elemModalRegisterUser.click();
                     }).catch(error => {

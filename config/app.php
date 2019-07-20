@@ -163,7 +163,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -172,7 +172,6 @@ return [
         // Coop\Providers\BroadcastServiceProvider::class,
         Coop\Providers\EventServiceProvider::class,
         Coop\Providers\RouteServiceProvider::class,
-        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
     ],
 
     /*

@@ -10,6 +10,7 @@
 window.Vue = require('vue');
 window.axios = require('axios');
 import Toasted from 'vue-toasted';
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -25,6 +26,9 @@ Vue.component('registrar-usuario-component', require('./components/user/Registra
 Vue.component('iniciar-sesion-component', require('./components/user/IniciarSesionComponent.vue'));
 Vue.component('spinner-component', require('./components/extras/SpinnerComponent.vue'));
 Vue.component('dropzone-component', require('./components/post/DropZoneComponent.vue'));
+Vue.component('dropdown-component-user', require('./components/user/DropDownUserLoggedComponent.vue'));
+Vue.component('swiper-cooperativas-component', require('./components/extras/SwiperCooperativasComponent.vue'));
+Vue.component('imagen-uno', require('./components/extras/Imagen1Component.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 // LIBRERIAS EXTERNAS
 Vue.component('InfiniteLoading', require('vue-infinite-loading'));
@@ -32,6 +36,7 @@ Vue.component('InfiniteLoading', require('vue-infinite-loading'));
 Vue.config.productionTip = false;
 Vue.prototype.$hostname = (Vue.config.productionTip) ? 'https://www.your-api.com' : 'http://127.0.0.1:4500';
 Vue.prototype.$api_file = '/api/file';
+Vue.prototype.$api_editar_imagen = '/api/subir-imagenes-cooperativa';
 
 // files.keys().map(key => {
 //     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))

@@ -18,6 +18,11 @@
 .modal-title-registrar-usuario{
     color: #e0f2f1;
 }
+/*OVERRIDE BUTTONS USER*/
+.sing-up-button > a {
+    background: #26a69a;
+    color: #fff;
+}
 /*OVERRIDE*/
 .float-user-button{
     font-family: 'Montserrat', sans-serif;
@@ -111,7 +116,7 @@
     color: #00695c;
 }
 
-#ui-list-cooperativas{
+.ui-list-cooperativas{
     background-color: #00897b;
 }
 .li-cooperativas{
@@ -509,12 +514,23 @@ p {
 -------------------------- */
 
 .wellcome_area {
-    background-image: url(img/bg-img/welcome-bg.jpg);
+    /*background-image: url(img/bg-img/welcome-bg.jpg);
     height: 900px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
-    background-size: cover;
+    background-size: cover;*/
+
+
+
+    height: 900px;
+    position: relative;
+    z-index: 1;
+    background-position: bottom center;
+    background-size: 100% 93px;
+    background: no-repeat;
+    background-color: rgba(0, 0, 0, 0);
+    background-color: #00719e;
 }
 
 .wellcome_area:after {
@@ -824,7 +840,7 @@ p {
 }
 
 .video-area .video-play-btn a:hover {
-    background-color: #a865e1;
+    background-color: #009688;
     color: #fff;
 }
 
@@ -835,12 +851,12 @@ p {
 .cool_facts_area {
     position: relative;
     z-index: auto;
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #009688;
+    background: -webkit-linear-gradient(to left, #00796b, #009688);
+    background: -webkit-linear-gradient(right, #00796b, #009688);
+    background: -webkit-gradient(linear, right top, left top, from(#00796b), to(#009688));
+    background: -o-linear-gradient(right, #00796b, #009688);
+    background: linear-gradient(to left, #00796b, #009688);
     padding: 180px 0 80px 0;
     top: -100px;
 }
@@ -993,7 +1009,7 @@ p {
 .single-price-plan.active .package-plan,
 .single-price-plan.active .plan-button > a,
 .single-price-plan:hover .plan-button > a {
-    background-color: #a865e1;
+    background-color: #009688;
 }
 
 .single-price-plan.active .package-plan .ca-price > h4,
@@ -1121,12 +1137,12 @@ p {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #009688;
+    background: -webkit-linear-gradient(to left, #00796b, #009688);
+    background: -webkit-linear-gradient(right, #00796b, #009688);
+    background: -webkit-gradient(linear, right top, left top, from(#00796b), to(#009688));
+    background: -o-linear-gradient(right, #00796b, #009688);
+    background: linear-gradient(to left, #00796b, #009688);
 }
 
 .membership-description > h2 {
