@@ -67,16 +67,15 @@
     <div class="footer-menu">
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Acerca de Nosotros</a></li>
+                <li><a href="#">Terminos &amp; Condiciones</a></li>
+                <li><a href="#">Política de privacidad</a></li>
+                <li><a href="#">Contactos</a></li>
             </ul>
         </nav>
     </div>
     <!-- Foooter Text-->
     <div class="copyright-text">
-        <!-- ***** Removing this text is now allowed! This template is licensed under CC BY 3.0 ***** -->
         <p>Copyright ©2018 Theme_K@. Designed by <a href="#" target="_blank">Yamil Alejo Perez</a></p>
     </div>
 </footer>

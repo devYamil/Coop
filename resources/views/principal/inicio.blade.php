@@ -1850,7 +1850,7 @@
             <div class="col-md-8">
                 <div class="membership-description">
                     <h2>Únete a nuestra lista de socios</h2>
-                    <p>Find the perfect plan for you — 100% satisfaction guaranteed.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting </p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -1890,8 +1890,8 @@
                         </div>
                     </div>
                     <div class="member-text">
-                        <h4>Jackson Nash</h4>
-                        <p>Tax Advice</p>
+                        <h4>Rodolfo</h4>
+                        <p>Presidente de la federacion</p>
                     </div>
                 </div>
             </div>
@@ -1968,16 +1968,16 @@
                     <div class="line-shape"></div>
                 </div>
                 <div class="footer-text">
-                    <p>We'll send you epic weekly blogs, whitepapers and things to make your app startup thrive, all FREE!</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                 </div>
                 <div class="address-text">
-                    <p><span>Dirección:</span> 40 Baria Sreet 133/2 NewYork City, US</p>
+                    <p><span>Dirección:</span> Cochabamba-Bolivia Av. America S/N</p>
                 </div>
                 <div class="phone-text">
-                    <p><span>Teléfono:</span> +11-225-888-888-66</p>
+                    <p><span>Teléfono:</span> +591 65321668</p>
                 </div>
                 <div class="email-text">
-                    <p><span>Correo Electrónico:</span> info.concobol@gmail.com</p>
+                    <p><span>Correo Electrónico:</span> ymaildev@gmail.com</p>
                 </div>
             </div>
             <div class="col-md-6">

@@ -20,46 +20,6 @@ class CooperativaTableSeeder extends Seeder
                 'telefono' => 838927,
                 'direccion' => 'name@domain.com'
             ],
-            [
-                'nombre' => 'FENCOTRANS',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FEBOCAC',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FENCOA',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FECOTEL',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FENALCOE',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'COBOCE',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FENCA',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ],
-            [
-                'nombre' => 'FENCOPAS',
-                'telefono' => 838927,
-                'direccion' => 'name@domain.com'
-            ]
         ];
 
 

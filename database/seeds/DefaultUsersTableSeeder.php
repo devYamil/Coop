@@ -15,11 +15,11 @@ class DefaultUsersTableSeeder extends Seeder
 
         $users = [
             [
-                'name' => 'Yamil Alejo',
+                'name' => 'Usuario Inicial',
                 'id_cooperativa' => 0, // COOPERATIVA DEFAULT FOR ALL
                 'type_user' => 2,        // TIPO USUARIO SUPER ADMIN
-                'email' => 'knt_277@hotmail.es',
-                'password' => bcrypt('8580227')
+                'email' => 'prueba@hotmail.es',
+                'password' => bcrypt('123456')
             ],
             [
                 'name' => 'Aurelio Smith',

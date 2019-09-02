@@ -15245,6 +15245,7 @@ var render = function() {
                                                 "col-md-6 col-lg-4 item zoom-on-hover"
                                             },
                                             [
+                                              myresource.extension == "jpeg" ||
                                               myresource.extension == "jpg" ||
                                               myresource.extension == "png"
                                                 ? _c(

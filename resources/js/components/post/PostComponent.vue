@@ -115,7 +115,7 @@
                                     <div class="container">
                                         <div class="row no-gutters">
                                             <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in JSON.parse(post.resource)">
-                                                <div class="image-content"  v-if="myresource.extension == 'jpg' || myresource.extension == 'png'">
+                                                <div class="image-content"  v-if="myresource.extension == 'jpeg' || myresource.extension == 'jpg' || myresource.extension == 'png'">
                                                     <a class="lightbox" :href="'/uploads/' + myresource.new_name">
                                                         <img class="img-fluid image" style="width: 500px !important;" :src="'/uploads/' + myresource.new_name">
                                                         <span class="description">
