@@ -21,7 +21,7 @@
 <!-- ***** Header Area End ***** -->
 <!-- ***** Wellcome Area Start ***** -->
 <section class="wellcome_area clearfix" id="inicio">
-    <div class="h-100 container-full">
+    <div class="h-100 container-full" style="width:98% !important;">
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md">
                 <!--
@@ -1466,13 +1466,13 @@
 
         <div class="row">
             <!-- Single Special Area -->
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
                 <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
                     <div class="single-icon">
                         <i class="ti-mobile" aria-hidden="true"></i>
                     </div>
                     <h4>MISIÓN</h4>
-                    <p style="text-align: justify;">
+                    <p class="mision">
                         Promueve la asociatividad en las cooperativas a nivel local, regional y
                         departamental, para el fortalecimiento de la gestion comunitaria del agua
                         potable y el saneamiento como un derecho humano en todo el territorio
@@ -1483,31 +1483,17 @@
                 </div>
             </div>
             <!-- Single Special Area -->
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md-6">
                 <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                     <div class="single-icon">
                         <i class="ti-ruler-pencil" aria-hidden="true"></i>
                     </div>
                     <h4>VISIÓN</h4>
-                    <p style="text-align: justify;">
+                    <p class="vision">
                         Es una organización con presencia nacional e incidencia internacional,
                         que promueve la asociatividad, potencia y coordina esfuerzos y aspiraciones
                         de las Cooperativas a nivel local, regional y Departamentales de Servicios de Agua
                         Potable y Saneamiento, en beneficio de las cooperativas y los asociados.
-                    </p>
-                </div>
-            </div>
-            <!-- Single Special Area -->
-            <div class="col-12 col-md-4">
-                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="single-icon">
-                        <i class="ti-settings" aria-hidden="true"></i>
-                    </div>
-                    <h4>VALORES</h4>
-                    <p style="text-align: justify;">
-                        Latin words, combined with a handful of model sentence structures,
-                        to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
-                        from repetition, injected humour, or non-characteristic words etc.
                     </p>
                 </div>
             </div>
@@ -1638,7 +1624,7 @@
     <div class="container">
         <div class="row">
             <!-- Single Cool Fact-->
-            <div class="col-12 col-md-3 col-lg-3">
+            <div class="col-12 col-md-3 col-lg-4">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                     <div class="counter-area">
                         <h3>+<span class="counter">90</span></h3>
@@ -1650,7 +1636,7 @@
                 </div>
             </div>
             <!-- Single Cool Fact-->
-            <div class="col-12 col-md-3 col-lg-3">
+            <div class="col-12 col-md-3 col-lg-4">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
                     <div class="counter-area">
                         <h3>+<span class="counter">700</span></h3>
@@ -1662,7 +1648,7 @@
                 </div>
             </div>
             <!-- Single Cool Fact-->
-            <div class="col-12 col-md-3 col-lg-3">
+            <div class="col-12 col-md-3 col-lg-4">
                 <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
                     <div class="counter-area">
                         <h3>+<span class="counter">30</span></h3>
@@ -1670,18 +1656,6 @@
                     <div class="cool-facts-content">
                         <i class="ion-person"></i>
                         <p>Cuentas <br>Activas</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Single Cool Fact-->
-            <div class="col-12 col-md-3 col-lg-3">
-                <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
-                    <div class="counter-area">
-                        <h3><span class="counter">10</span></h3>
-                    </div>
-                    <div class="cool-facts-content">
-                        <i class="ion-ios-star-outline"></i>
-                        <p>Total <br>Puntuacion</p>
                     </div>
                 </div>
             </div>
@@ -1958,66 +1932,7 @@
 <!-- ***** Our Team Area End ***** -->
 
 <!-- ***** Contact Us Area Start ***** -->
-<section class="footer-contact-area section_padding_100 clearfix" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Heading Text  -->
-                <div class="section-heading">
-                    <h2>¡Póngase en contacto con nosotros!</h2>
-                    <div class="line-shape"></div>
-                </div>
-                <div class="footer-text">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-                </div>
-                <div class="address-text">
-                    <p><span>Dirección:</span> Cochabamba-Bolivia Av. America S/N</p>
-                </div>
-                <div class="phone-text">
-                    <p><span>Teléfono:</span> +591 65321668</p>
-                </div>
-                <div class="email-text">
-                    <p><span>Correo Electrónico:</span> ymaildev@gmail.com</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <!-- Form Start-->
-                <div class="contact_from">
-                    <form action="#" method="post">
-                        <!-- Message Input Area Start -->
-                        <div class="contact_input_area">
-                            <div class="row">
-                                <!-- Single Input Area Start -->
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="name" id="name" placeholder="Escribe tú nombre" required>
-                                    </div>
-                                </div>
-                                <!-- Single Input Area Start -->
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Escribe tú correo electrónico" required>
-                                    </div>
-                                </div>
-                                <!-- Single Input Area Start -->
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Escribenos tu mensaje *" required></textarea>
-                                    </div>
-                                </div>
-                                <!-- Single Input Area Start -->
-                                <div class="col-12">
-                                    <button type="submit" class="btn submit-btn">Enviar ahora..!!</button>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Message Input Area End -->
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<pongase-en-contacto></pongase-en-contacto>
 
 
 

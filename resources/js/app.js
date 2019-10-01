@@ -29,6 +29,7 @@ Vue.component('dropzone-component', require('./components/post/DropZoneComponent
 Vue.component('dropdown-component-user', require('./components/user/DropDownUserLoggedComponent.vue'));
 Vue.component('swiper-cooperativas-component', require('./components/extras/SwiperCooperativasComponent.vue'));
 Vue.component('imagen-uno', require('./components/extras/Imagen1Component.vue'));
+Vue.component('pongase-en-contacto', require('./components/extras/PongaseEncontacto.vue'));
 // const files = require.context('./', true, /\.vue$/i)
 // LIBRERIAS EXTERNAS
 Vue.component('InfiniteLoading', require('vue-infinite-loading'));
@@ -37,6 +38,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$hostname = (Vue.config.productionTip) ? 'https://www.your-api.com' : 'http://127.0.0.1:4500';
 Vue.prototype.$api_file = '/api/file';
 Vue.prototype.$api_editar_imagen = '/api/subir-imagenes-cooperativa';
+Vue.prototype.$uri_correo_ponganse_contacto = '/api/enviar-correo-pongase-contacto';
 
 // files.keys().map(key => {
 //     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))

@@ -13,14 +13,14 @@
 -------------------------- */
 /* MODAL REGISTRAR USUARIO */
 .modal-header-registrar-usuario{
-    background-color: #00695c;
+    background-color: #283593;
 }
 .modal-title-registrar-usuario{
     color: #e0f2f1;
 }
 /*OVERRIDE BUTTONS USER*/
 .sing-up-button > a {
-    background: #26a69a;
+    background: #1565c0;
     color: #fff;
 }
 /*OVERRIDE*/
@@ -37,87 +37,87 @@
 }
 #modal_name::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
     opacity: 1; /* Firefox */
 }
 #modal_email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-     color: #00695c;
+     color: #283593;
      opacity: 1; /* Firefox */
 }
 #modal_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
     opacity: 1; /* Firefox */
 }
 #modal_repeat_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
     opacity: 1; /* Firefox */
 }
 #modal_is_email::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
     opacity: 1; /* Firefox */
 }
 #modal_is_password::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
     opacity: 1; /* Firefox */
 }
 
 #modal_name:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_email:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_repeat_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_is_email:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_is_password:-ms-input-placeholder { /* Internet Explorer 10-11 */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 
 #modal_name:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_email:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_password:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_repeat_password:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_is_email:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 #modal_is_password:-ms-input-placeholder { /* Microsoft Edge */
     font-family: 'Montserrat', sans-serif;
-    color: #00695c;
+    color: #283593;
 }
 
 .ui-list-cooperativas{
-    background-color: #00897b;
+    background-color: #283593;
 }
 .li-cooperativas{
     padding-left: 10px;
@@ -126,7 +126,7 @@
 @media (max-width: 767px) and (min-width: 320px)
 {
     #ca-navbar {
-        background-color: #00695c !important;
+        background-color: #283593 !important;
     }
 }
 * {
@@ -289,7 +289,7 @@ ol {
     font-size: 24px;
     right: 30px;
     width: 50px;
-    background-color: #00796b;
+    background-color: #2196f3;
     color: #fff;
     text-align: center;
     height: 50px;
@@ -323,7 +323,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #00695c;
+    color: #283593;
     font-size: 48px;
     margin: 0;
 }
@@ -337,7 +337,7 @@ p {
 .line-shape {
     width: 80px;
     height: 2px;
-    background-color: #00796b;
+    background-color: #2196f3;
     margin-top: 15px;
 }
 
@@ -375,7 +375,7 @@ p {
     -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
     animation: 2000ms linear 0s normal none infinite running colorlib-load;
     background: transparent none repeat scroll 0 0;
-    border-color: #dddddd #dddddd #00796b;
+    border-color: #dddddd #dddddd #2196f3;
     border-radius: 50%;
     border-style: solid;
     border-width: 2px;
@@ -457,7 +457,7 @@ p {
 
 
 .menu_area nav ul li > a:hover {
-    color: #00796b;
+    color: #2196f3;
 }
 
 .sing-up-button {
@@ -468,7 +468,7 @@ p {
     color: #fff;
     font-weight: 500;
     display: inline-block;
-    border: 2px solid #00897b;
+    border: 2px solid #283593;
     height: 50px;
     min-width: 178px;
     line-height: 46px;
@@ -477,7 +477,7 @@ p {
 }
 
 .sing-up-button > a:hover {
-    background: #00796b;
+    background: #2196f3;
     color: #fff;
     border-color: transparent;
     -webkit-transition-duration: 500ms;
@@ -488,7 +488,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #00695c;
+    background-color: #283593;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -530,7 +530,7 @@ p {
     background-size: 100% 93px;
     background: no-repeat;
     background-color: rgba(0, 0, 0, 0);
-    background-color: #00719e;
+    background-color: #283593;
 }
 
 .wellcome_area:after {
@@ -566,7 +566,7 @@ p {
 }
 
 .get-start-area .email {
-    background: #26a69a;
+    background: #1565c0;
     color: #FFFFFF;
     height: 50px;
     max-width: 260px;
@@ -576,22 +576,22 @@ p {
 }
 
 .form-control::-webkit-input-placeholder {
-    color: #cec1f4;
+    color: #1a237e;
     opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-    color: #cec1f4;
+    color: #1a237e;
     opacity: 1;
 }
 
 .form-control::-ms-input-placeholder {
-    color: #cec1f4;
+    color: #1a237e;
     opacity: 1;
 }
 
 .form-control::placeholder {
-    color: #cec1f4;
+    color: #1a237e;
     opacity: 1;
 }
 
@@ -602,7 +602,7 @@ p {
 }
 
 .get-start-area .submit {
-    background-color: #00796b;
+    background-color: #2196f3;
     color: #fff;
     font-weight: 500;
     display: inline-block;
@@ -617,7 +617,7 @@ p {
 
 .get-start-area .submit:hover {
     cursor: pointer;
-    background: #00897b;
+    background: #283593;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -650,12 +650,12 @@ p {
 
 .single-icon > i {
     font-size: 36px;
-    color: #00796b;
+    color: #2196f3;
 }
 
 .single-special > h4 {
     font-size: 22px;
-    color: #00695c;
+    color: #283593;
 }
 
 .single-icon {
@@ -664,7 +664,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #00695c;
+    color: #283593;
     margin-bottom: 15px;
 }
 
@@ -679,7 +679,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #00695c;
+    color: #283593;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -725,7 +725,7 @@ p {
 .app-download-btn.active a,
 .app-download-btn a:hover {
     border-color: transparent;
-    background-color: #00796b;
+    background-color: #2196f3;
 }
 
 .app-download-btn a i {
@@ -774,7 +774,7 @@ p {
 }
 
 .single-feature > i {
-    color: #00796b;
+    color: #2196f3;
     font-size: 30px;
     display: inline-block;
     float: left;
@@ -783,7 +783,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #00695c;
+    color: #283593;
 }
 
 .single-feature > p {
@@ -822,7 +822,7 @@ p {
 .video-area .video-play-btn a {
     width: 80px;
     height: 80px;
-    background-color: #00796b;
+    background-color: #2196f3;
     color: #fff;
     text-align: center;
     display: block;
@@ -840,7 +840,7 @@ p {
 }
 
 .video-area .video-play-btn a:hover {
-    background-color: #009688;
+    background-color: #283593;
     color: #fff;
 }
 
@@ -851,12 +851,12 @@ p {
 .cool_facts_area {
     position: relative;
     z-index: auto;
-    background: #009688;
-    background: -webkit-linear-gradient(to left, #00796b, #009688);
-    background: -webkit-linear-gradient(right, #00796b, #009688);
-    background: -webkit-gradient(linear, right top, left top, from(#00796b), to(#009688));
-    background: -o-linear-gradient(right, #00796b, #009688);
-    background: linear-gradient(to left, #00796b, #009688);
+    background: #283593;
+    background: -webkit-linear-gradient(to left, #2196f3, #283593);
+    background: -webkit-linear-gradient(right, #2196f3, #283593);
+    background: -webkit-gradient(linear, right top, left top, from(#2196f3), to(#283593));
+    background: -o-linear-gradient(right, #2196f3, #283593);
+    background: linear-gradient(to left, #2196f3, #283593);
     padding: 180px 0 80px 0;
     top: -100px;
 }
@@ -932,7 +932,7 @@ p {
 }
 
 .app-screenshots-area .owl-dot.active {
-    background-color: #00796b;
+    background-color: #2196f3;
     border: transparent;
 }
 
@@ -963,13 +963,13 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #00695c;
+    color: #283593;
     font-size: 18px;
 }
 
 
 .single-price-plan .package-plan .ca-price h4 {
-    color: #00796b;
+    color: #2196f3;
     font-size: 48px;
     position: relative;
     z-index: 1;
@@ -979,7 +979,7 @@ p {
 
 .single-price-plan .package-plan .ca-price span {
     font-size: 18px;
-    color: #00796b;
+    color: #2196f3;
 }
 
 .single-price-plan .plan-button > a {
@@ -1009,7 +1009,7 @@ p {
 .single-price-plan.active .package-plan,
 .single-price-plan.active .plan-button > a,
 .single-price-plan:hover .plan-button > a {
-    background-color: #009688;
+    background-color: #283593;
 }
 
 .single-price-plan.active .package-plan .ca-price > h4,
@@ -1024,7 +1024,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #00695c;
+    color: #283593;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -1075,8 +1075,8 @@ p {
 }
 
 .clients-feedback-area .slick-dots li.slick-active button {
-    background-color: #00796b;
-    border-color: #00796b;
+    background-color: #2196f3;
+    border-color: #2196f3;
 }
 
 .clients-feedback-area .slick-slide.client-thumbnail {
@@ -1137,12 +1137,12 @@ p {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #009688;
-    background: -webkit-linear-gradient(to left, #00796b, #009688);
-    background: -webkit-linear-gradient(right, #00796b, #009688);
-    background: -webkit-gradient(linear, right top, left top, from(#00796b), to(#009688));
-    background: -o-linear-gradient(right, #00796b, #009688);
-    background: linear-gradient(to left, #00796b, #009688);
+    background: #283593;
+    background: -webkit-linear-gradient(to left, #2196f3, #283593);
+    background: -webkit-linear-gradient(right, #2196f3, #283593);
+    background: -webkit-gradient(linear, right top, left top, from(#2196f3), to(#283593));
+    background: -o-linear-gradient(right, #2196f3, #283593);
+    background: linear-gradient(to left, #2196f3, #283593);
 }
 
 .membership-description > h2 {
@@ -1162,13 +1162,13 @@ p {
     display: inline-block;
     text-align: center;
     line-height: 45px;
-    color: #00796b;
+    color: #2196f3;
     font-weight: 500;
     border-radius: 23px 23px 23px 0;
 }
 
 .get-started-button > a:hover {
-    background: #00695c;
+    background: #283593;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1196,7 +1196,7 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #00695c;
+    color: #283593;
 }
 
 .member-text > p {
@@ -1273,7 +1273,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #00695c;
+    color: #283593;
 }
 
 .footer-contact-area .line-shape {
@@ -1320,7 +1320,7 @@ p {
 }
 
 .btn.submit-btn {
-    background: #00796b;
+    background: #2196f3;
     height: 48px;
     min-width: 185px;
     color: #ffffff;
@@ -1329,7 +1329,7 @@ p {
 }
 
 .btn.submit-btn:hover {
-    background: #00695c;
+    background: #283593;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1349,13 +1349,13 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #00695c;
+    color: #283593;
     font-size: 72px;
     font-weight: 700;
 }
 
 .footer-social-icon > a > i {
-    background: #26a69a;
+    background: #1565c0;
     font-size: 14px;
     color: #ffffff;
     height: 40px;
@@ -1367,7 +1367,7 @@ p {
 }
 
 .footer-social-icon > a > i:hover {
-    background: #00796b;
+    background: #2196f3;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1394,7 +1394,7 @@ p {
 }
 
 .footer-social-icon > a .active {
-    background: #00796b;
+    background: #2196f3;
 }
 
 .footer-menu ul li:last-child a {
@@ -1411,4 +1411,10 @@ p {
 
 .copyright-text > p {
     margin-bottom: 0;
+}
+.mision,
+.vision{
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+    font-size: 17px;
 }

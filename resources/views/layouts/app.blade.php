@@ -12,6 +12,8 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ URL::asset('theme_ka/img/core-img/harcodedicon.png') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Poppins -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <!-- Core Stylesheet -->
     <link href="{{ URL::asset('theme_ka/style.css') }}" rel="stylesheet">
     <!-- CUSTOM STYLE CSS -->
@@ -76,7 +78,7 @@
     </div>
     <!-- Foooter Text-->
     <div class="copyright-text">
-        <p>Copyright ©2018 Theme_K@. Designed by <a href="#" target="_blank">Yamil Alejo Perez</a></p>
+        <p>Derechos Reservados ©2019 Theme_K@. Designed by <a href="#" target="_blank">Yamil Alejo Perez</a></p>
     </div>
 </footer>
 <!-- ***** Footer Area Start ***** -->
@@ -86,7 +88,7 @@
 <script src="{{ URL::asset('theme_ka/js/jquery-2.2.4.min.js') }}"></script>
 <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
 <script type="text/javascript" src="{{ URL::asset('revolution-slider/src/js/jquery.themepunch.plugins.min.js') }}"></script>
-<script type="text/javascript" src="{{ URL::asset('revolution-slider/src/js/jquery.themepunch.revolution.min.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('revolution-slider/src/js/jquery.themepunch.revolution.js') }}"></script>
 <!-- Popper js -->
 <script src="{{ URL::asset('theme_ka/js/popper.min.js') }}"></script>
 <!-- Bootstrap-4 Beta JS -->

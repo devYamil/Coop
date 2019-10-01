@@ -68,22 +68,10 @@
                                                                 @vdropzone-complete="dropzoneComplete"
                                                                 @vdropzone-queue-complete="dropzoneQueueComplete"
                                                                 @vdropzone-file-added="dropzoneFileAdded"
-                                                                @vdropzone-removed-file="dropzoneRemovedFile"
-                                                        >
+                                                                @vdropzone-removed-file="dropzoneRemovedFile">
                                                         </vue-dropzone>
-                                                        <button type="submit" style="border: 0;">
-                                                            <i class="material-icons">near_me</i>
-                                                        </button>
-                                                        <button type="button" v-on:click="showDropzoneArea('foo')">
-                                                            <i class="material-icons">folder_open</i>
-                                                        </button>
-
-                                                        <i class="material-icons">refresh</i>
-                                                        <i class="material-icons">search</i>
-                                                        <i class="material-icons">explore</i>
-                                                        <i class="material-icons">folder_open</i>
-                                                        <i class="material-icons">autorenew</i>
-                                                        <i class="material-icons">add</i>
+                                                        <button class="buttonPublicarAdjuntar">Publicar</button>
+                                                        <button class="buttonPublicarAdjuntar" v-on:click="showDropzoneArea('foo')">Adjuntar</button>
                                                     </div>
                                                     <p v-show="requireTextPost" style="color: red;">Debe Ingresar algun texto o imagen</p>
                                                 </form>
