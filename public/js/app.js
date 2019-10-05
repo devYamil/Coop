@@ -12812,6 +12812,7 @@ Vue.prototype.$hostname = Vue.config.productionTip ? 'https://www.your-api.com' 
 Vue.prototype.$api_file = '/api/file';
 Vue.prototype.$api_editar_imagen = '/api/subir-imagenes-cooperativa';
 Vue.prototype.$uri_correo_ponganse_contacto = '/api/enviar-correo-pongase-contacto';
+Vue.prototype.$api_listar_cooperativas = '/api/listar-cooperativas-json';
 
 // files.keys().map(key => {
 //     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))
@@ -14410,6 +14411,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -14557,7 +14565,8 @@ var config = {
                 _this2.$toasted.error('Ocurrio un error al registrar el post!!').goAway(4000);
                 console.log('ERROR LISTAR POSTS: ', error);
             });
-        }
+        },
+        verRecurso: function verRecurso(tipo) {}
     },
     mounted: function mounted() {
         this.id_cooperativa = window.location.href.split('/').pop();
@@ -15026,8 +15035,7 @@ var render = function() {
                                         staticClass: "form-control w-100",
                                         attrs: {
                                           type: "text",
-                                          placeholder:
-                                            "Ingrese la noticia o actividad a relizar"
+                                          placeholder: "Ingrese la actividad"
                                         },
                                         domProps: { value: _vm.Post.text },
                                         on: {
@@ -15179,218 +15187,109 @@ var render = function() {
                           ),
                           _vm._v(" "),
                           post.resource.length > 0
-                            ? _c(
-                                "section",
-                                {
-                                  staticClass: "gallery-block compact-gallery"
-                                },
-                                [
-                                  _c("div", { staticClass: "container" }, [
-                                    _c(
+                            ? _c("div", { staticClass: "container" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "row text-center text-lg-left"
+                                  },
+                                  _vm._l(JSON.parse(post.resource), function(
+                                    myresource
+                                  ) {
+                                    return _c(
                                       "div",
-                                      { staticClass: "row no-gutters" },
-                                      _vm._l(
-                                        JSON.parse(post.resource),
-                                        function(myresource) {
-                                          return _c(
-                                            "div",
-                                            {
-                                              staticClass:
-                                                "col-md-6 col-lg-4 item zoom-on-hover"
-                                            },
-                                            [
-                                              myresource.extension == "jpeg" ||
-                                              myresource.extension == "jpg" ||
-                                              myresource.extension == "png"
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "image-content"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "lightbox",
-                                                          attrs: {
-                                                            href:
-                                                              "/uploads/" +
-                                                              myresource.new_name
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "img-fluid image",
-                                                            staticStyle: {
-                                                              width:
-                                                                "500px !important"
-                                                            },
-                                                            attrs: {
-                                                              src:
-                                                                "/uploads/" +
-                                                                myresource.new_name
-                                                            }
-                                                          }),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "span",
-                                                            {
-                                                              staticClass:
-                                                                "description"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "span",
-                                                                {
-                                                                  staticClass:
-                                                                    "description-heading"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    _vm._s(
-                                                                      myresource.new_name
-                                                                    )
-                                                                  )
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "span",
-                                                                {
-                                                                  staticClass:
-                                                                    "description-body"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              myresource.extension == "pdf"
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "image-content"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "a",
-                                                        {
-                                                          staticClass:
-                                                            "lightbox",
-                                                          attrs: {
-                                                            href:
-                                                              "/uploads/" +
-                                                              myresource.new_name
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "img-fluid image",
-                                                            staticStyle: {
-                                                              width:
-                                                                "500px !important"
-                                                            },
-                                                            attrs: {
-                                                              src:
-                                                                "/image_default/previewpdf.png"
-                                                            }
-                                                          }),
-                                                          _vm._v(" "),
-                                                          _c(
-                                                            "span",
-                                                            {
-                                                              staticClass:
-                                                                "description"
-                                                            },
-                                                            [
-                                                              _c(
-                                                                "span",
-                                                                {
-                                                                  staticClass:
-                                                                    "description-heading"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    _vm._s(
-                                                                      myresource.new_name
-                                                                    )
-                                                                  )
-                                                                ]
-                                                              ),
-                                                              _vm._v(" "),
-                                                              _c(
-                                                                "span",
-                                                                {
-                                                                  staticClass:
-                                                                    "description-body"
-                                                                },
-                                                                [
-                                                                  _vm._v(
-                                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                                                                  )
-                                                                ]
-                                                              )
-                                                            ]
-                                                          )
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e(),
-                                              _vm._v(" "),
-                                              myresource.extension == "mp4"
-                                                ? _c(
-                                                    "div",
-                                                    {
-                                                      staticClass:
-                                                        "video-content"
-                                                    },
-                                                    [
-                                                      _c(
-                                                        "video",
-                                                        {
-                                                          attrs: {
-                                                            width: "320",
-                                                            height: "240",
-                                                            controls: ""
-                                                          }
-                                                        },
-                                                        [
-                                                          _c("source", {
-                                                            attrs: {
-                                                              src:
-                                                                "/uploads/" +
-                                                                myresource.new_name,
-                                                              type: "video/mp4"
-                                                            }
-                                                          })
-                                                        ]
-                                                      )
-                                                    ]
-                                                  )
-                                                : _vm._e()
-                                            ]
-                                          )
-                                        }
-                                      )
+                                      {
+                                        staticClass: "col-lg-3 col-md-4 col-6"
+                                      },
+                                      [
+                                        myresource.extension == "jpeg" ||
+                                        myresource.extension == "jpg" ||
+                                        myresource.extension == "JPG" ||
+                                        myresource.extension == "png"
+                                          ? _c(
+                                              "a",
+                                              {
+                                                staticClass: "d-block",
+                                                attrs: { href: "#" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.verRecurso("imagen")
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("img", {
+                                                  staticClass:
+                                                    "img-fluid img-thumbnail",
+                                                  attrs: {
+                                                    src:
+                                                      "/uploads/" +
+                                                      myresource.new_name,
+                                                    alt: ""
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        myresource.extension == "pdf"
+                                          ? _c(
+                                              "a",
+                                              {
+                                                staticClass: "d-block",
+                                                attrs: { href: "#" },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.verRecurso("imagen")
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("img", {
+                                                  staticClass:
+                                                    "img-fluid img-thumbnail",
+                                                  attrs: {
+                                                    src:
+                                                      "/image_default/previewpdf.png"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          : _vm._e(),
+                                        _vm._v(" "),
+                                        myresource.extension == "mp4"
+                                          ? _c(
+                                              "video",
+                                              {
+                                                staticClass: "d-block",
+                                                attrs: {
+                                                  width: "320",
+                                                  height: "240",
+                                                  controls: ""
+                                                },
+                                                on: {
+                                                  click: function($event) {
+                                                    _vm.verRecurso("video")
+                                                  }
+                                                }
+                                              },
+                                              [
+                                                _c("source", {
+                                                  attrs: {
+                                                    src:
+                                                      "/uploads/" +
+                                                      myresource.new_name,
+                                                    type: "video/mp4"
+                                                  }
+                                                })
+                                              ]
+                                            )
+                                          : _vm._e()
+                                      ]
                                     )
-                                  ])
-                                ]
-                              )
+                                  })
+                                )
+                              ])
                             : _vm._e()
                         ])
                       ]
@@ -16897,7 +16796,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -16909,6 +16808,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__event_bus__ = __webpack_require__(16);
+//
 //
 //
 //
@@ -16986,7 +16886,7 @@ var config = {
         getListCooperatias: function getListCooperatias() {
             var _this2 = this;
 
-            var url = 'http://127.0.0.1:4500/api/listar-cooperativas-json';
+            var url = this.$hostname + this.$api_listar_cooperativas;
             axios.get(url, config).then(function (response) {
 
                 try {
@@ -16995,7 +16895,6 @@ var config = {
                     cooperativasData = cooperativasData.cooperativas;
                     //this.cooperativas = this.cooperativas.concat(cooperativasData);
                     for (var cooperativaKey in cooperativasData) {
-                        console.log('POST DATA RESPONSE---> ', cooperativasData[cooperativaKey]);
                         _this2.cooperativas.push({
                             id: cooperativasData[cooperativaKey].id,
                             nombre: cooperativasData[cooperativaKey].nombre,
@@ -17013,6 +16912,7 @@ var config = {
     },
     mounted: function mounted() {
         console.log("PROPS : ", this.federacion);
+        // VERIFICAR SI TENEMOS USUARIO LOGUEADO PARA MOSTRAR O AL RECARGAR MOSTRAR EL DROPDOWN LIST
     },
 
     props: ['federacion', 'descripcion']
@@ -17050,33 +16950,7 @@ var render = function() {
               [
                 _vm._m(1),
                 _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass: "nav-item dropdown",
-                    attrs: { href: "#inicio" }
-                  },
-                  [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "dropdown-menu ui-list-cooperativas" },
-                      _vm._l(_vm.cooperativas, function(cooperativa) {
-                        return _c("li", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "li-cooperativas",
-                              attrs: { href: cooperativa.href }
-                            },
-                            [_vm._v(_vm._s(cooperativa.nombre))]
-                          )
-                        ])
-                      })
-                    )
-                  ]
-                ),
+                _vm._m(2),
                 _vm._v(" "),
                 _vm._m(3),
                 _vm._v(" "),
@@ -17163,17 +17037,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "nav-link dropdown-toggle",
-        attrs: { "data-toggle": "dropdown", href: "#" }
-      },
-      [
-        _vm._v("Federaciones y Cooperativas "),
-        _c("span", { staticClass: "caret" })
-      ]
-    )
+    return _c("li", { staticClass: "nav-item" }, [
+      _c("a", { staticClass: "nav-link", attrs: { href: "/actividades/3" } }, [
+        _vm._v("Actividades")
+      ])
+    ])
   },
   function() {
     var _vm = this

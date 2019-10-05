@@ -12,15 +12,16 @@
                 <div class="collapse navbar-collapse" id="ca-navbar">
                     <ul class="navbar-nav ml-auto" id="nav">
                         <li class="nav-item active"><a class="nav-link" href="#inicio">Inicio</a></li>
-                        <li class="nav-item dropdown" href="#inicio">
+                        <!--<li class="nav-item dropdown" href="#inicio">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Federaciones y Cooperativas <span class="caret"></span></a>
-                            <!-- LISTADO DE COOPERATIVAS -->
+                            &lt;!&ndash; LISTADO DE COOPERATIVAS &ndash;&gt;
                             <ul class="dropdown-menu ui-list-cooperativas" >
                                 <li v-for="cooperativa in cooperativas">
                                     <a class="li-cooperativas" :href="cooperativa.href">{{cooperativa.nombre}}</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>-->
+                        <li class="nav-item"><a class="nav-link" href="/actividades/3">Actividades</a></li>
                         <li class="nav-item"><a class="nav-link" href="#acerca_de">Acerca de Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#features">Caracteristicas</a></li>
                         <li class="nav-item"><a class="nav-link" href="#screenshot">Fotos</a></li>
@@ -70,42 +71,42 @@
         },
         methods:{
             getListCooperatias(){
-                var url = 'http://127.0.0.1:4500/api/listar-cooperativas-json';
-                axios
-                    .get(url, config)
-                    .then( (response) => {
+                var url = this.$hostname + this.$api_listar_cooperativas;
+                axios.get(url, config)
+                     .then( (response) => {
 
-                        try {
-                            let cooperativasData = response.data;
-                            //console.log('MIS COOPERATIVAS : ' ,  cooperativasData);
-                            cooperativasData = cooperativasData.cooperativas;
-                            //this.cooperativas = this.cooperativas.concat(cooperativasData);
-                            for (var cooperativaKey in cooperativasData)
-                            {
-                                console.log('POST DATA RESPONSE---> ', cooperativasData[cooperativaKey]);
-                                this.cooperativas.push(
-                                    {
-                                        id: cooperativasData[cooperativaKey].id,
-                                        nombre: cooperativasData[cooperativaKey].nombre,
-                                        href: '/actividades/' + cooperativasData[cooperativaKey].id
-                                    })
+                            try {
+                                let cooperativasData = response.data;
+                                //console.log('MIS COOPERATIVAS : ' ,  cooperativasData);
+                                cooperativasData = cooperativasData.cooperativas;
+                                //this.cooperativas = this.cooperativas.concat(cooperativasData);
+                                for (var cooperativaKey in cooperativasData)
+                                {
+                                    this.cooperativas.push(
+                                        {
+                                            id: cooperativasData[cooperativaKey].id,
+                                            nombre: cooperativasData[cooperativaKey].nombre,
+                                            href: '/actividades/' + cooperativasData[cooperativaKey].id
+                                        })
+                                }
+
+                            }
+                            catch (e) {
+                                console.log('error ', e)
                             }
 
-                        }
-                        catch (e) {
-                            console.log('error ', e)
-                        }
-
-                    }).catch(error => {
-                        this.$toasted
-                            .error('Ocurrio un error al listar las cooperativas!!')
-                            .goAway(4000);
-                        console.log('ERROR LISTAR COOPERATIVAS: ' , error);
-                    });
+                        }).catch(error => {
+                            this.$toasted
+                                .error('Ocurrio un error al listar las cooperativas!!')
+                                .goAway(4000);
+                            console.log('ERROR LISTAR COOPERATIVAS: ' , error);
+                        });
                 }
         },
         mounted() {
             console.log("PROPS : ", this.federacion);
+            // VERIFICAR SI TENEMOS USUARIO LOGUEADO PARA MOSTRAR O AL RECARGAR MOSTRAR EL DROPDOWN LIST
+
         },
         props: ['federacion', 'descripcion'],
     }

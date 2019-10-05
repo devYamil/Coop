@@ -39,6 +39,7 @@ Vue.prototype.$hostname = (Vue.config.productionTip) ? 'https://www.your-api.com
 Vue.prototype.$api_file = '/api/file';
 Vue.prototype.$api_editar_imagen = '/api/subir-imagenes-cooperativa';
 Vue.prototype.$uri_correo_ponganse_contacto = '/api/enviar-correo-pongase-contacto';
+Vue.prototype.$api_listar_cooperativas = '/api/listar-cooperativas-json';
 
 // files.keys().map(key => {
 //     return Vue.component(_.last(key.split('/')).split('.')[0], files(key))

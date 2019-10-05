@@ -1467,7 +1467,7 @@
         <div class="row">
             <!-- Single Special Area -->
             <div class="col-12 col-md-6">
-                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.4s">
                     <div class="single-icon">
                         <i class="ti-mobile" aria-hidden="true"></i>
                     </div>

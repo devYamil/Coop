@@ -55,7 +55,7 @@
                                         <div class="col-md-10">
                                             <div class="get-start-area" style="display: inline-block !important;">
                                                 <form @submit.prevent="validateForm" class="form-inline">
-                                    <textarea v-model="Post.text" type="text" placeholder="Ingrese la noticia o actividad a relizar" class="form-control w-100">
+                                    <textarea v-model="Post.text" type="text" placeholder="Ingrese la actividad" class="form-control w-100">
                                     </textarea>
                                                     <div class="main-wrapper" style="width: 100%;">
                                                         <!-- DROPZONE -->
@@ -98,27 +98,34 @@
                                 <p class="card-text card-custom-text">
                                     {{post.text}}
                                 </p>
+                                <div class="container" v-if="post.resource.length > 0">
+                                    <div class="row text-center text-lg-left" >
+                                        <div class="col-lg-3 col-md-4 col-6" v-for="myresource in JSON.parse(post.resource)">
+                                            <a href="#" class="d-block" @click="verRecurso('imagen')"  v-if="myresource.extension == 'jpeg' || myresource.extension == 'jpg' || myresource.extension == 'JPG' || myresource.extension == 'png'">
+                                                <img class="img-fluid img-thumbnail" :src="'/uploads/' + myresource.new_name" alt="">
+                                            </a>
+                                            <a href="#" class="d-block" @click="verRecurso('imagen')" v-if="myresource.extension == 'pdf'">
+                                                <img class="img-fluid img-thumbnail" :src="'/image_default/previewpdf.png'">
+                                            </a>
+                                            <video class="d-block" @click="verRecurso('video')" width="320" height="240" controls v-if="myresource.extension == 'mp4'">
+                                                <source :src="'/uploads/' + myresource.new_name" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <section class="gallery-block compact-gallery" v-if="post.resource.length > 0" >
+                                <!--<section class="gallery-block compact-gallery" v-if="post.resource.length > 0" >
                                     <div class="container">
                                         <div class="row no-gutters">
                                             <div class="col-md-6 col-lg-4 item zoom-on-hover" v-for="myresource in JSON.parse(post.resource)">
-                                                <div class="image-content"  v-if="myresource.extension == 'jpeg' || myresource.extension == 'jpg' || myresource.extension == 'png'">
+                                                <div class="image-content"  v-if="myresource.extension == 'jpeg' || myresource.extension == 'jpg' || myresource.extension == 'JPG' || myresource.extension == 'png'">
                                                     <a class="lightbox" :href="'/uploads/' + myresource.new_name">
                                                         <img class="img-fluid image" style="width: 500px !important;" :src="'/uploads/' + myresource.new_name">
-                                                        <span class="description">
-                                                <span class="description-heading">{{myresource.new_name}}</span>
-                                                <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                            </span>
                                                     </a>
                                                 </div>
                                                 <div class="image-content"  v-if="myresource.extension == 'pdf'">
                                                     <a class="lightbox" :href="'/uploads/' + myresource.new_name">
                                                         <img class="img-fluid image" style="width: 500px !important;" :src="'/image_default/previewpdf.png'">
-                                                        <span class="description">
-                                                <span class="description-heading">{{myresource.new_name}}</span>
-                                                <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-                                            </span>
                                                     </a>
                                                 </div>
                                                 <div class="video-content" v-if="myresource.extension == 'mp4'">
@@ -129,7 +136,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </section>
+                                </section>-->
                             </div>
                         </div>
 
@@ -329,6 +336,9 @@
                         .goAway(4000);
                     console.log('ERROR LISTAR POSTS: ' , error);
                 });
+            },
+            verRecurso(tipo){
+
             }
         },
         mounted() {
